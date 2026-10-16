@@ -1,0 +1,140 @@
+﻿{
+    "passed":  true,
+    "compiler":  "37.0.57242.3601",
+    "target":  "Win64",
+    "unitTests":  114,
+    "failures":  0,
+    "errors":  0,
+    "ignored":  0,
+    "stateCases":  14,
+    "expectedProcessErrors":  3,
+    "externalNodeRequired":  false,
+    "output":  [
+                   {
+                       "value":  "validacao_sem_aplicacao=True",
+                       "PSPath":  "D:\\Livros\\blockchain-na-pratica-com-delphi-exemplos\\build\\Chapter07.Transactions\\experiment.txt",
+                       "PSParentPath":  "D:\\Livros\\blockchain-na-pratica-com-delphi-exemplos\\build\\Chapter07.Transactions",
+                       "PSChildName":  "experiment.txt",
+                       "PSDrive":  "D",
+                       "PSProvider":  "Microsoft.PowerShell.Core\\FileSystem",
+                       "ReadCount":  1
+                   },
+                   {
+                       "value":  "primeiro_registro=True",
+                       "PSPath":  "D:\\Livros\\blockchain-na-pratica-com-delphi-exemplos\\build\\Chapter07.Transactions\\experiment.txt",
+                       "PSParentPath":  "D:\\Livros\\blockchain-na-pratica-com-delphi-exemplos\\build\\Chapter07.Transactions",
+                       "PSChildName":  "experiment.txt",
+                       "PSDrive":  "D",
+                       "PSProvider":  "Microsoft.PowerShell.Core\\FileSystem",
+                       "ReadCount":  2
+                   },
+                   {
+                       "value":  "formato_invalido_rejeitado=True",
+                       "PSPath":  "D:\\Livros\\blockchain-na-pratica-com-delphi-exemplos\\build\\Chapter07.Transactions\\experiment.txt",
+                       "PSParentPath":  "D:\\Livros\\blockchain-na-pratica-com-delphi-exemplos\\build\\Chapter07.Transactions",
+                       "PSChildName":  "experiment.txt",
+                       "PSDrive":  "D",
+                       "PSProvider":  "Microsoft.PowerShell.Core\\FileSystem",
+                       "ReadCount":  3
+                   },
+                   {
+                       "value":  "adulteracao_rejeitada=True",
+                       "PSPath":  "D:\\Livros\\blockchain-na-pratica-com-delphi-exemplos\\build\\Chapter07.Transactions\\experiment.txt",
+                       "PSParentPath":  "D:\\Livros\\blockchain-na-pratica-com-delphi-exemplos\\build\\Chapter07.Transactions",
+                       "PSChildName":  "experiment.txt",
+                       "PSDrive":  "D",
+                       "PSProvider":  "Microsoft.PowerShell.Core\\FileSystem",
+                       "ReadCount":  4
+                   },
+                   {
+                       "value":  "reenvio_rejeitado=True",
+                       "PSPath":  "D:\\Livros\\blockchain-na-pratica-com-delphi-exemplos\\build\\Chapter07.Transactions\\experiment.txt",
+                       "PSParentPath":  "D:\\Livros\\blockchain-na-pratica-com-delphi-exemplos\\build\\Chapter07.Transactions",
+                       "PSChildName":  "experiment.txt",
+                       "PSDrive":  "D",
+                       "PSProvider":  "Microsoft.PowerShell.Core\\FileSystem",
+                       "ReadCount":  5
+                   },
+                   {
+                       "value":  "sequencia_reutilizada_rejeitada=True",
+                       "PSPath":  "D:\\Livros\\blockchain-na-pratica-com-delphi-exemplos\\build\\Chapter07.Transactions\\experiment.txt",
+                       "PSParentPath":  "D:\\Livros\\blockchain-na-pratica-com-delphi-exemplos\\build\\Chapter07.Transactions",
+                       "PSChildName":  "experiment.txt",
+                       "PSDrive":  "D",
+                       "PSProvider":  "Microsoft.PowerShell.Core\\FileSystem",
+                       "ReadCount":  6
+                   },
+                   {
+                       "value":  "salto_rejeitado=True",
+                       "PSPath":  "D:\\Livros\\blockchain-na-pratica-com-delphi-exemplos\\build\\Chapter07.Transactions\\experiment.txt",
+                       "PSParentPath":  "D:\\Livros\\blockchain-na-pratica-com-delphi-exemplos\\build\\Chapter07.Transactions",
+                       "PSChildName":  "experiment.txt",
+                       "PSDrive":  "D",
+                       "PSProvider":  "Microsoft.PowerShell.Core\\FileSystem",
+                       "ReadCount":  7
+                   },
+                   {
+                       "value":  "documento_duplicado_rejeitado=True",
+                       "PSPath":  "D:\\Livros\\blockchain-na-pratica-com-delphi-exemplos\\build\\Chapter07.Transactions\\experiment.txt",
+                       "PSParentPath":  "D:\\Livros\\blockchain-na-pratica-com-delphi-exemplos\\build\\Chapter07.Transactions",
+                       "PSChildName":  "experiment.txt",
+                       "PSDrive":  "D",
+                       "PSProvider":  "Microsoft.PowerShell.Core\\FileSystem",
+                       "ReadCount":  8
+                   },
+                   {
+                       "value":  "outra_rede_rejeitada=True",
+                       "PSPath":  "D:\\Livros\\blockchain-na-pratica-com-delphi-exemplos\\build\\Chapter07.Transactions\\experiment.txt",
+                       "PSParentPath":  "D:\\Livros\\blockchain-na-pratica-com-delphi-exemplos\\build\\Chapter07.Transactions",
+                       "PSChildName":  "experiment.txt",
+                       "PSDrive":  "D",
+                       "PSProvider":  "Microsoft.PowerShell.Core\\FileSystem",
+                       "ReadCount":  9
+                   },
+                   {
+                       "value":  "estado_apos_rejeicoes_preservado=True",
+                       "PSPath":  "D:\\Livros\\blockchain-na-pratica-com-delphi-exemplos\\build\\Chapter07.Transactions\\experiment.txt",
+                       "PSParentPath":  "D:\\Livros\\blockchain-na-pratica-com-delphi-exemplos\\build\\Chapter07.Transactions",
+                       "PSChildName":  "experiment.txt",
+                       "PSDrive":  "D",
+                       "PSProvider":  "Microsoft.PowerShell.Core\\FileSystem",
+                       "ReadCount":  10
+                   },
+                   {
+                       "value":  "mesmo_documento_outra_conta=True",
+                       "PSPath":  "D:\\Livros\\blockchain-na-pratica-com-delphi-exemplos\\build\\Chapter07.Transactions\\experiment.txt",
+                       "PSParentPath":  "D:\\Livros\\blockchain-na-pratica-com-delphi-exemplos\\build\\Chapter07.Transactions",
+                       "PSChildName":  "experiment.txt",
+                       "PSDrive":  "D",
+                       "PSProvider":  "Microsoft.PowerShell.Core\\FileSystem",
+                       "ReadCount":  11
+                   },
+                   {
+                       "value":  "proxima_sequencia=True",
+                       "PSPath":  "D:\\Livros\\blockchain-na-pratica-com-delphi-exemplos\\build\\Chapter07.Transactions\\experiment.txt",
+                       "PSParentPath":  "D:\\Livros\\blockchain-na-pratica-com-delphi-exemplos\\build\\Chapter07.Transactions",
+                       "PSChildName":  "experiment.txt",
+                       "PSDrive":  "D",
+                       "PSProvider":  "Microsoft.PowerShell.Core\\FileSystem",
+                       "ReadCount":  12
+                   },
+                   {
+                       "value":  "reconstrucao_do_estado=True",
+                       "PSPath":  "D:\\Livros\\blockchain-na-pratica-com-delphi-exemplos\\build\\Chapter07.Transactions\\experiment.txt",
+                       "PSParentPath":  "D:\\Livros\\blockchain-na-pratica-com-delphi-exemplos\\build\\Chapter07.Transactions",
+                       "PSChildName":  "experiment.txt",
+                       "PSDrive":  "D",
+                       "PSProvider":  "Microsoft.PowerShell.Core\\FileSystem",
+                       "ReadCount":  13
+                   },
+                   {
+                       "value":  "ordem_invertida_rejeitada=True",
+                       "PSPath":  "D:\\Livros\\blockchain-na-pratica-com-delphi-exemplos\\build\\Chapter07.Transactions\\experiment.txt",
+                       "PSParentPath":  "D:\\Livros\\blockchain-na-pratica-com-delphi-exemplos\\build\\Chapter07.Transactions",
+                       "PSChildName":  "experiment.txt",
+                       "PSDrive":  "D",
+                       "PSProvider":  "Microsoft.PowerShell.Core\\FileSystem",
+                       "ReadCount":  14
+                   }
+               ]
+}

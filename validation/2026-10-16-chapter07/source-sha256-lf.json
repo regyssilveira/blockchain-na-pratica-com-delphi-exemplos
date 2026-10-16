@@ -1,0 +1,8 @@
+{
+  "demos/Chapter07.Transactions.dpr": "3a54a892cf0a564f5ae2be81bfc9aff285dd0d0f57fb7cc27940c85e83e184d8",
+  "scripts/Test-Chapter07.ps1": "9c6b4849eee3c1601eede71edf78fcb42e0dcfe10cb6f3f8ddd806eca47e2adb",
+  "scripts/Test-Primitives.ps1": "3ff1a38b6b38a0a5a0b6be031ca8e7d848fbb04ee62d4fb96a288839aac7d1ff",
+  "src/Didactic.Transaction.pas": "2abd5e02d7ba026a4dcdd12ee7bc2a3439bbed1489d33ea40463bd73074c2cb3",
+  "src/Didactic.Chain.pas": "a3eaccae9e72c4a5669571193c6f7416c4ad8a50002b10ba13e063d71d053222",
+  "src/Didactic.Codec.pas": "e94b316feb4a4a32bbbbe4b53e7316d96710b600356d94b80b962d2e1c804912"
+}

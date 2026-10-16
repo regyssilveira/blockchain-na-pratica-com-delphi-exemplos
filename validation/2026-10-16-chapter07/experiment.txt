@@ -1,0 +1,14 @@
+validacao_sem_aplicacao=True
+primeiro_registro=True
+formato_invalido_rejeitado=True
+adulteracao_rejeitada=True
+reenvio_rejeitado=True
+sequencia_reutilizada_rejeitada=True
+salto_rejeitado=True
+documento_duplicado_rejeitado=True
+outra_rede_rejeitada=True
+estado_apos_rejeicoes_preservado=True
+mesmo_documento_outra_conta=True
+proxima_sequencia=True
+reconstrucao_do_estado=True
+ordem_invertida_rejeitada=True

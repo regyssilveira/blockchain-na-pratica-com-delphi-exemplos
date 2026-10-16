@@ -24,6 +24,16 @@ O [exemplo de arquivos assinados](chapters/chapter06/README.md) usa as funções
 
 São 76 testes offline existentes e cinco experimentos nativos, sem iniciar nó. As chaves são conhecidas e exclusivas do laboratório. Consulte os [resultados executados](validation/2026-10-16-chapter06/RESULTADOS.md).
 
+## Transações e estado do capítulo 7
+
+O [console de transações](chapters/chapter07/README.md) exercita as regras existentes de formato, assinatura, sequência e duplicidade, sem construir blocos ou iniciar nós. Referência `chapter07-examples-2026-10-16`.
+
+```powershell
+.\scripts\Test-Chapter07.ps1 -DelphiRoot 'C:\Program Files (x86)\Embarcadero\Studio\37.0'
+```
+
+Executa 114 testes existentes da base didática e 14 verificações no console, com três erros operacionais esperados. Consulte os [resultados e limites](validation/2026-10-16-chapter07/RESULTADOS.md).
+
 ## Requisitos
 
 - Windows x86-64 e Delphi 13 com compilador Win64, bibliotecas padrão e DUnit. Referência observada: build 37.0.57242.3601. O leitor deve ter uma licença Delphi adequada à sua utilização.

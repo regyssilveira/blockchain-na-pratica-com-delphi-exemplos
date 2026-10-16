@@ -1,0 +1,1 @@
+EFOpenError: Cannot open file "D:\Livros\blockchain-na-pratica-com-delphi-exemplos\build\Chapter07.Transactions\b642fd26fb9e4b42aefb136d7598cc3f.absent". O sistema não pode encontrar o arquivo especificado

@@ -1,0 +1,1 @@
+EArgumentException: O experimento exige conteudos diferentes.
