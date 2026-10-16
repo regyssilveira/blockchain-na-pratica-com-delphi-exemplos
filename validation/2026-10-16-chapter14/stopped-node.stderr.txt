@@ -1,0 +1,1 @@
+ELocalRpcError: Transport failure: Error sending data: (12029) Uma conexão com o servidor não pôde ser estabelecida

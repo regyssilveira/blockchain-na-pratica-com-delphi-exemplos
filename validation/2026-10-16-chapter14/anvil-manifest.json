@@ -1,0 +1,13 @@
+﻿{
+    "version":  "1.8.5",
+    "commit":  "51a52c59cffd940f76eddd0b4bb1791aa4b5ac7f",
+    "url":  "https://github.com/foundry-rs/foundry/releases/download/v1.8.5/foundry_v1.8.5_win32_amd64.zip",
+    "archiveSha256":  "21f86b563d87404a68481f513bf3e419780ee536307b89c658215ae6f8f5aa45",
+    "executableSha256":  "1693305e3a5afa7ab85e966389e21259bc7193909411465e5ce31b90a1e3d9f6",
+    "versionOutput":  [
+                          "anvil Version: 1.8.5",
+                          "Commit SHA: 51a52c59cffd940f76eddd0b4bb1791aa4b5ac7f",
+                          "Build Timestamp: 2026-10-05T17:01:32.131957300Z (1791219692)",
+                          "Build Profile: dist"
+                      ]
+}

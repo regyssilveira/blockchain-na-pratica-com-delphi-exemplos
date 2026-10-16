@@ -129,3 +129,7 @@ Use a tag `prototype-p04-complete-2026-10-16` e siga o [roteiro completo, crité
 ## Licença do material
 
 O código original e os scripts deste repositório usam Apache License 2.0, em `LICENSE`. As dependências mantêm suas próprias licenças e avisos, descritos em `THIRD_PARTY_NOTICES.md`. Elas são baixadas de suas origens e não são incorporadas ao histórico deste repositório.
+
+## Ambiente do capítulo 14
+
+A inspeção Delphi de rede, bloco e saldo está em [chapters/chapter14](chapters/chapter14/README.md), tag `chapter14-examples-2026-10-16`. O roteiro `scripts/Test-Chapter14.ps1` inicia um Anvil novo, faz consultas e encerra sua própria instância; não exige contrato ou solc.

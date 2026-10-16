@@ -1,0 +1,6 @@
+{
+  "demos/Chapter14.Environment.dpr": "224c8f80617ccfd1aff79dddb99489929c46f770f353cff93dafc8b5b9cd252a",
+  "scripts/Test-Chapter14.ps1": "0f838e44cc29e0bc4d9d8e43d9266f996f14696b500dba6c803b1abcde83ffe8",
+  "scripts/Test-Primitives.ps1": "08133be946df647c63f7455bd8308aee4263be424289153f0398f9fbe04506a9",
+  "src/Blockchain.LocalRpc.pas": "f1c8614a410f3cfcfd377ebcb1c24dbf0aa8ff43f0ece26ee4a43cf2abecac33"
+}
