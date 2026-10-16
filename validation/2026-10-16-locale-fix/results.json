@@ -1,0 +1,60 @@
+[
+  {
+    "kind": "corrected",
+    "executed": 367,
+    "failures": 0,
+    "errors": 0,
+    "ignored": 9,
+    "cases": [
+      {
+        "name": "OnTestingEnds_Writes_The_Assembly_Time_As_A_Duration.CommaZero",
+        "result": "Success",
+        "message": null
+      },
+      {
+        "name": "OnTestingEnds_Writes_The_Assembly_Time_As_A_Duration.CommaFraction",
+        "result": "Success",
+        "message": null
+      },
+      {
+        "name": "OnTestingEnds_Writes_The_Assembly_Time_As_A_Duration.PointZero",
+        "result": "Success",
+        "message": null
+      },
+      {
+        "name": "OnTestingEnds_Writes_The_Assembly_Time_As_A_Duration.PointFraction",
+        "result": "Success",
+        "message": null
+      }
+    ]
+  },
+  {
+    "kind": "mutation",
+    "executed": 367,
+    "failures": 4,
+    "errors": 0,
+    "ignored": 9,
+    "cases": [
+      {
+        "name": "OnTestingEnds_Writes_The_Assembly_Time_As_A_Duration.CommaZero",
+        "result": "Failure",
+        "message": " Expected [0.000] but got [0,000]  "
+      },
+      {
+        "name": "OnTestingEnds_Writes_The_Assembly_Time_As_A_Duration.CommaFraction",
+        "result": "Failure",
+        "message": " Expected [1.234] but got [1,234]  "
+      },
+      {
+        "name": "OnTestingEnds_Writes_The_Assembly_Time_As_A_Duration.PointZero",
+        "result": "Failure",
+        "message": " Expected [0.000] but got [0,000]  "
+      },
+      {
+        "name": "OnTestingEnds_Writes_The_Assembly_Time_As_A_Duration.PointFraction",
+        "result": "Failure",
+        "message": " Expected [1.234] but got [1,234]  "
+      }
+    ]
+  }
+]

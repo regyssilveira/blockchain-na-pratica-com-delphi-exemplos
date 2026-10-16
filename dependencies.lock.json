@@ -2,10 +2,45 @@
   "schemaVersion": 1,
   "target": "Delphi 13 Windows Win64",
   "dependencies": [
-    {"name":"CryptoLib4Pascal","repository":"https://github.com/Xor-el/CryptoLib4Pascal.git","commit":"1b5dd61e8746972ba6af72f967f9bcc663479af5","license":"MIT"},
-    {"name":"HashLib4Pascal","repository":"https://github.com/Xor-el/HashLib4Pascal.git","commit":"8b2cd8de5457146e5695a4439f11a62765f4b9ee","license":"MIT"},
-    {"name":"SimpleBaseLib4Pascal","repository":"https://github.com/Xor-el/SimpleBaseLib4Pascal.git","commit":"bcbb404f6de078d1d3df423bd9dd4c624eedd3df","license":"MIT"},
-    {"name":"DUnitX","repository":"https://github.com/VSoftTechnologies/DUnitX.git","commit":"fbad5c969cc0b89ae433a014d551a36684f370e1","license":"Apache-2.0"},
-    {"name":"Delphi-Mocks","repository":"https://github.com/VSoftTechnologies/Delphi-Mocks.git","commit":"3cea649fcfdb05c8cd30248d21e73b804880bd59","license":"Apache-2.0","scope":"upstream DUnitX tests only","tag":"v0.2.2"}
+    {
+      "name": "CryptoLib4Pascal",
+      "repository": "https://github.com/Xor-el/CryptoLib4Pascal.git",
+      "commit": "1b5dd61e8746972ba6af72f967f9bcc663479af5",
+      "license": "MIT"
+    },
+    {
+      "name": "HashLib4Pascal",
+      "repository": "https://github.com/Xor-el/HashLib4Pascal.git",
+      "commit": "8b2cd8de5457146e5695a4439f11a62765f4b9ee",
+      "license": "MIT"
+    },
+    {
+      "name": "SimpleBaseLib4Pascal",
+      "repository": "https://github.com/Xor-el/SimpleBaseLib4Pascal.git",
+      "commit": "bcbb404f6de078d1d3df423bd9dd4c624eedd3df",
+      "license": "MIT"
+    },
+    {
+      "name": "DUnitX",
+      "repository": "https://github.com/VSoftTechnologies/DUnitX.git",
+      "commit": "fbad5c969cc0b89ae433a014d551a36684f370e1",
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "Delphi-Mocks",
+      "repository": "https://github.com/VSoftTechnologies/Delphi-Mocks.git",
+      "commit": "3cea649fcfdb05c8cd30248d21e73b804880bd59",
+      "license": "Apache-2.0",
+      "scope": "upstream DUnitX tests only",
+      "tag": "v0.2.2"
+    }
+  ],
+  "patches": [
+    {
+      "dependency": "DUnitX",
+      "file": "patches/DUnitX-nunit-duration-locale.patch",
+      "sha256": "02e58620b7b210fa0ae43f9f293cb0d22d786f5f209e4088ec2b7522071185c7",
+      "purpose": "Locale-independent NUnit duration assertion and four regression scenarios"
+    }
   ]
 }

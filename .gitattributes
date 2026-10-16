@@ -1,0 +1,2 @@
+# O checksum do manifesto identifica os bytes exatos do patch.
+patches/*.patch -text -whitespace

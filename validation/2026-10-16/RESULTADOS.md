@@ -1,5 +1,7 @@
 # Validação local das suítes em 16 de outubro de 2026
 
+Registro histórico da primeira execução. A falha regional descrita abaixo foi posteriormente investigada e resolvida; consultar [a validação da correção](../2026-10-16-locale-fix/RESULTADOS.md). Os números originais foram preservados.
+
 Ambiente: Windows 11 Pro x86-64, Delphi 13, dcc64 build 37.0.57242.3601. As revisões de dependências estão em `dependencies.lock.json`. Todos os executáveis foram compilados em Win64, sem pacotes de execução de terceiros, com fontes locais e definições CONSOLE_TESTRUNNER e CI.
 
 | Suíte original | Compilação | Execução observada |

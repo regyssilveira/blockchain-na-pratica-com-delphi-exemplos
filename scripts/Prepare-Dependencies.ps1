@@ -39,6 +39,25 @@ foreach ($dependency in $lock.dependencies) {
         if ($LASTEXITCODE -ne 0 -or @($changedPaths | Where-Object {$_ -ne 'Source/Delphi.Mocks.pas'}).Count -gt 0) {
             throw 'Alterações inesperadas em Delphi-Mocks.'
         }
+    } elseif ($dependency.name -eq 'DUnitX') {
+        $patch = Join-Path $projectRoot 'patches\DUnitX-nunit-duration-locale.patch'
+        $patchLock = @($lock.patches | Where-Object {$_.dependency -eq 'DUnitX'})
+        if ($patchLock.Count -ne 1 -or (Get-FileHash -LiteralPath $patch -Algorithm SHA256).Hash -ne $patchLock[0].sha256) {
+            throw 'Checksum do patch DUnitX diverge do manifesto.'
+        }
+        $changes = @(git -C $destination diff --name-only)
+        if ($changes.Count -eq 0) {
+            git -C $destination apply --check $patch
+            if ($LASTEXITCODE -ne 0) { throw 'Patch DUnitX não se aplica à revisão fixada.' }
+            git -C $destination apply $patch
+            if ($LASTEXITCODE -ne 0) { throw 'Falha ao aplicar patch DUnitX.' }
+        }
+        $actualPatch = (@(git -C $destination diff -- Tests/DUnitX.Tests.Loggers.XML.NUnit.pas) -join "`n").TrimEnd()
+        $expectedPatch = ([IO.File]::ReadAllText($patch).Replace("`r`n", "`n")).TrimEnd()
+        $changedPaths = @(git -C $destination diff --name-only)
+        if ($actualPatch -ne $expectedPatch -or @($changedPaths | Where-Object {$_ -ne 'Tests/DUnitX.Tests.Loggers.XML.NUnit.pas'}).Count -gt 0) {
+            throw 'DUnitX contém alterações além do patch de regressão regional esperado.'
+        }
     } else {
         $changes = git -C $destination status --porcelain --untracked-files=no
         if ($LASTEXITCODE -ne 0 -or $changes) { throw "Fontes modificados em $($dependency.name)." }

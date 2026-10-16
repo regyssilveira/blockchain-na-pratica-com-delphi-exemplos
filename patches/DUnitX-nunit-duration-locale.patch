@@ -1,0 +1,90 @@
+diff --git a/Tests/DUnitX.Tests.Loggers.XML.NUnit.pas b/Tests/DUnitX.Tests.Loggers.XML.NUnit.pas
+index 4e2783c..4cb89db 100644
+--- a/Tests/DUnitX.Tests.Loggers.XML.NUnit.pas
++++ b/Tests/DUnitX.Tests.Loggers.XML.NUnit.pas
+@@ -56,7 +56,11 @@ type
+   //    procedure OnTestingEnds_Fills_The_End_Of_The_Stream_With_Testing_Result_Info;
+ {$IFDEF DELPHI_XE2_UP}
+     [Test]
+-    procedure OnTestingEnds_Writes_The_Assembly_Time_As_A_Duration;
++    [TestCase('CommaZero', 'comma,0')]
++    [TestCase('CommaFraction', 'comma,1234')]
++    [TestCase('PointZero', 'point,0')]
++    [TestCase('PointFraction', 'point,1234')]
++    procedure OnTestingEnds_Writes_The_Assembly_Time_As_A_Duration(const ARegionalFormat: string; const ADurationMilliseconds: Integer);
+ {$ENDIF}
+ {$IFDEF DELPHI_XE2_UP}
+     [Test(false)]
+@@ -205,7 +209,7 @@ begin
+ end;
+ 
+ {$IFDEF DELPHI_XE2_UP}
+-procedure TDUnitX_LoggerXMLNUnitTests.OnTestingEnds_Writes_The_Assembly_Time_As_A_Duration;
++procedure TDUnitX_LoggerXMLNUnitTests.OnTestingEnds_Writes_The_Assembly_Time_As_A_Duration(const ARegionalFormat: string; const ADurationMilliseconds: Integer);
+ var
+   logger : ITestLogger;
+   stream : TStringStream;
+@@ -219,7 +223,18 @@ var
+   context : ITestExecuteContext;
+   fixtureResult : IFixtureResult;
+   xml : string;
++  savedFormatSettings: TFormatSettings;
++  expectedFormatSettings: TFormatSettings;
++  mockRunResults: TMock<IRunResults>;
+ begin
++  savedFormatSettings := FormatSettings;
++  try
++    if ARegionalFormat = 'comma' then
++      FormatSettings.DecimalSeparator := ','
++    else
++      FormatSettings.DecimalSeparator := '.';
++    expectedFormatSettings := savedFormatSettings;
++    expectedFormatSettings.DecimalSeparator := '.';
+   categories := TList<string>.Create;
+   stream := TStringStream.Create('', TEncoding.UTF8);
+   try
+@@ -251,20 +266,42 @@ begin
+     context.RecordResult(fixtureResult, mockResult.Instance);
+     context.RollupResults;
+ 
++    mockRunResults := TMock<IRunResults>.Create;
++    mockRunResults.Setup.WillReturn(TValue.From<IEnumerable<IFixtureResult>>(runResultsIntf.FixtureResults)).When.FixtureResults;
++    mockRunResults.Setup.WillReturn(TValue.From<TTimeSpan>(TTimeSpan.FromMilliseconds(ADurationMilliseconds))).When.Duration;
++    mockRunResults.Setup.WillReturn(runResultsIntf.TestCount).When.TestCount;
++    mockRunResults.Setup.WillReturn(runResultsIntf.IgnoredCount).When.IgnoredCount;
++    mockRunResults.Setup.WillReturn(runResultsIntf.ErrorCount).When.ErrorCount;
++    mockRunResults.Setup.WillReturn(runResultsIntf.FailureCount).When.FailureCount;
++    mockRunResults.Setup.WillReturn(runResultsIntf.MemoryLeakCount).When.MemoryLeakCount;
++    mockRunResults.Setup.WillReturn(runResultsIntf.AllPassed).When.AllPassed;
++    mockRunResults.Setup.WillReturn(TValue.From<TDateTime>(runResultsIntf.StartTime)).When.StartTime;
+     logger := TDUnitXXMLNUnitLogger.Create(stream);
+-    logger.OnTestingEnds(runResultsIntf);
++    logger.OnTestingEnds(mockRunResults.Instance);
+     xml := stream.DataString;
+ 
+     xml := Copy(xml, Pos('<test-suite type="Assembly"', xml), MaxInt);
+     Assert.IsTrue(xml <> '', stream.DataString);
+     sTime := Copy(xml, Pos('time="', xml) + Length('time="'), MaxInt);
+     sTime := Copy(sTime, 1, Pos('"', sTime) - 1);
+-    Assert.AreEqual(Format('%.3f', [runResultsIntf.Duration.TotalSeconds]), sTime);
++    // NUnit XML durations use a decimal point regardless of the host locale.
++    Assert.AreEqual(Format('%.3f', [mockRunResults.Instance.Duration.TotalSeconds], expectedFormatSettings), sTime);
++    if ADurationMilliseconds = 0 then
++      Assert.AreEqual('0.000', sTime)
++    else
++      Assert.AreEqual('1.234', sTime);
++    if ARegionalFormat = 'comma' then
++      Assert.AreEqual(',', string(FormatSettings.DecimalSeparator))
++    else
++      Assert.AreEqual('.', string(FormatSettings.DecimalSeparator));
+   finally
+     logger := nil;
+     stream.Free;
+     categories.Free;
+   end;
++  finally
++    FormatSettings := savedFormatSettings;
++  end;
+ end;
+ {$ENDIF}
+ 

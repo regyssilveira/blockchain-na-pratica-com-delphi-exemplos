@@ -41,7 +41,17 @@ CryptoLib4Pascal usa HashLib4Pascal e SimpleBaseLib4Pascal. As suítes dessas bi
 
 O preparo aplica uma única correção documentada a `Delphi-Mocks/Source/Delphi.Mocks.pas`: remove `Generics.Defaults` da lista uses da implementação, pois a interface já importa `System.Generics.Defaults`. Essa duplicidade impede a compilação no Delphi 13. O script compara o conteúdo com a revisão original e aceita apenas a transformação especificada; nenhuma regra de teste é alterada.
 
-Não habilitar integrações opcionais do DUnitX com ferramentas comerciais de diagnóstico. Os fontes criptográficos e os testes permanecem na revisão original. Consultar os resultados observados em `validation/`; não confundir aprovação das suítes com validação da integração blockchain.
+O preparo também aplica `patches/DUnitX-nunit-duration-locale.patch` ao teste de duração XML do DUnitX. O logger original já usa ponto decimal; a expectativa do teste foi corrigida para o mesmo contrato e ampliada para quatro cenários, com separadores regionais ponto/vírgula e durações 0/1.234 segundos. A configuração é restaurada ao sair do teste. Nenhum teste foi desabilitado e o logger de produção não foi alterado. Detalhes e comprovação de detecção de uma mutação estão em [validação da correção regional](validation/2026-10-16-locale-fix/RESULTADOS.md).
+
+Não habilitar integrações opcionais do DUnitX com ferramentas comerciais de diagnóstico. Os fontes e testes criptográficos permanecem na revisão original. A suíte DUnitX agora passa com 367 testes aprovados e os mesmos 9 ignorados existentes na base. Consultar os resultados observados em `validation/`; não confundir aprovação das suítes com validação da integração blockchain.
+
+Para repetir a verificação de regressão, incluindo uma mutação temporária que deve ser rejeitada:
+
+```powershell
+.\scripts\Test-DUnitXLocaleRegression.ps1 -DelphiRoot 'C:\Program Files (x86)\Embarcadero\Studio\37.0'
+```
+
+O script restaura o logger em `finally`, recompila e repete a suíte correta. A falha durante a mutação é esperada; o comando só aprova se os quatro casos a detectarem e a execução restaurada passar. Não muda as configurações regionais do Windows nem precisa de conexão com uma rede blockchain.
 
 ## Licença
 
