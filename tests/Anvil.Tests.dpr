@@ -13,7 +13,8 @@ uses
   Blockchain.Ethereum in '..\src\Blockchain.Ethereum.pas',
   Blockchain.Primitives.Tests in 'Blockchain.Primitives.Tests.pas',
   Blockchain.Ethereum.Tests in 'Blockchain.Ethereum.Tests.pas',
-  Blockchain.Anvil.Tests in 'Blockchain.Anvil.Tests.pas';
+  Blockchain.Anvil.Tests in 'Blockchain.Anvil.Tests.pas',
+  Blockchain.DocumentRegistry.Tests in 'Blockchain.DocumentRegistry.Tests.pas';
 
 var
   Runner: ITestRunner;

@@ -1,0 +1,11 @@
+{
+  "compiler": "0.8.37+commit.f401782d",
+  "compilerSha256": "967743b2d12155f59a0ddf9410afe25c7deaa73f4fe3d33c4dc0739f627d9ec9",
+  "compilerUrl": "https://binaries.soliditylang.org/windows-amd64/solc-windows-amd64-v0.8.37+commit.f401782d.exe",
+  "evmVersion": "cancun",
+  "optimizerRuns": 200,
+  "metadata": "none; appendCBOR=false",
+  "sourceSha256": "b4a48dfeb702b9a9546fe2c15f1527493025a2287ad68fff151ae0755e82fdfc",
+  "creationHexSha256": "2ecace30a9cc77dc20223da9be9fd442be4b1937861294f7cb21fd4e768c1fe6",
+  "runtimeHexSha256": "df7ed26ff13bc715dec2a192ed736fb55d6adebb4d60b3f2fda204ce0f5e28c2"
+}

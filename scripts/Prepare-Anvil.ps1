@@ -7,7 +7,7 @@ New-Item -ItemType Directory -Force -Path $directory | Out-Null
 $archive = Join-Path $directory 'foundry.zip'
 $url = 'https://github.com/foundry-rs/foundry/releases/download/v1.8.5/foundry_v1.8.5_win32_amd64.zip'
 $expected = '21f86b563d87404a68481f513bf3e419780ee536307b89c658215ae6f8f5aa45'
-if (-not (Test-Path -LiteralPath $archive)) { Invoke-WebRequest -Uri $url -OutFile $archive }
+if (-not (Test-Path -LiteralPath $archive)) { Invoke-WebRequest -UseBasicParsing -Uri $url -OutFile $archive }
 if ((Get-FileHash -LiteralPath $archive -Algorithm SHA256).Hash.ToLowerInvariant() -ne $expected) { throw 'Checksum do Anvil divergente. Remova somente o arquivo foundry.zip e repita.' }
 # Reextrair do arquivo verificado evita confiar em um executavel local modificado.
 Expand-Archive -LiteralPath $archive -DestinationPath $directory -Force

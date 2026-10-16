@@ -73,11 +73,17 @@ A etapa P03 acrescenta `src/Blockchain.Ethereum.pas`: palavras ABI estáticas, R
 
 O comando prepara as mesmas dependências e compila um executável Delphi nativo. Não requer carteira, rede Ethereum, Node.js ou Python. Consulte [resultados e limites P03](validation/2026-10-16-p03/RESULTADOS.md) e a [procedência dos vetores](fixtures/p03/PROVENIENCIA.md). Os dados de chave do exemplo são deliberadamente públicos e exclusivos do teste.
 
-## P04: transação Delphi aceita pelo Anvil local
+## P04 concluído: contrato de documentos e console Delphi
 
-Execute `.\scripts\Test-Anvil.ps1 -DelphiRoot 'C:\Program Files (x86)\Embarcadero\Studio\37.0'`. O roteiro prepara o Anvil 1.8.5 com checksum fixado, inicia uma rede nova somente local, compila e executa 77 testes e encerra o nó. Assinatura, codificação e envio são feitos em Delphi nativo. Há 76 regressões e um cenário de integração com transferência, recibo, saldos exatos e três rejeições esperadas.
+O roteiro compila o contrato com solc 0.8.37 fixado, prepara Anvil 1.8.5 local, executa **78 testes**, compila o console Delphi e registra um arquivo. Delphi calcula SHA-256, assina a implantação e o registro, envia as transações, confere o código implantado e consulta o resultado. Somente nó e compilador Solidity são externos.
 
-Veja [reprodução, critérios e limites do P04](validation/2026-10-16-p04/RESULTADOS.md). O contrato de registro permanece pendente. Binários e dependências não são distribuídos; o primeiro preparo precisa de internet, e o Delphi 13 requer instalação/licença própria.
+```powershell
+.\scripts\Test-Anvil.ps1 -DelphiRoot 'C:\Program Files (x86)\Embarcadero\Studio\37.0'
+```
+
+A entrada padrão é document-a.txt. Para um arquivo próprio, acrescente `-DocumentPath 'C:\Documentos\meu documento.pdf'`; se necessário, use `-Port 18546`. Somente o hash é enviado ao contrato. O roteiro cria uma rede nova e encerra o nó ao terminar, preservando recibos e consultas em build/Anvil.
+
+Use a tag `prototype-p04-complete-2026-10-16` e siga o [roteiro completo, critérios e limites](validation/2026-10-16-p04-contract/RESULTADOS.md). O [recorte anterior de transferência](validation/2026-10-16-p04/RESULTADOS.md) permanece como histórico. Requisitos: Windows x86-64, Git, PowerShell 5.1 ou 7 e Delphi 13 instalado/licenciado. O primeiro preparo precisa de internet; a execução usa uma rede exclusivamente local. As chaves são publicamente conhecidas e exclusivas do teste.
 
 ## Licença do material
 

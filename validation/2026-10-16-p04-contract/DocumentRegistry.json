@@ -1,0 +1,100 @@
+{
+  "manifest": {
+    "compiler": "0.8.37+commit.f401782d",
+    "compilerSha256": "967743b2d12155f59a0ddf9410afe25c7deaa73f4fe3d33c4dc0739f627d9ec9",
+    "compilerUrl": "https://binaries.soliditylang.org/windows-amd64/solc-windows-amd64-v0.8.37+commit.f401782d.exe",
+    "evmVersion": "cancun",
+    "optimizerRuns": 200,
+    "metadata": "none; appendCBOR=false",
+    "sourceSha256": "b4a48dfeb702b9a9546fe2c15f1527493025a2287ad68fff151ae0755e82fdfc",
+    "creationHexSha256": "2ecace30a9cc77dc20223da9be9fd442be4b1937861294f7cb21fd4e768c1fe6",
+    "runtimeHexSha256": "df7ed26ff13bc715dec2a192ed736fb55d6adebb4d60b3f2fda204ce0f5e28c2"
+  },
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "documentHash",
+          "type": "bytes32"
+        }
+      ],
+      "name": "AlreadyRegistered",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "documentHash",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "blockNumber",
+          "type": "uint256"
+        }
+      ],
+      "name": "DocumentRegistered",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "documentHash",
+          "type": "bytes32"
+        }
+      ],
+      "name": "lookup",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "exists",
+          "type": "bool"
+        },
+        {
+          "internalType": "uint256",
+          "name": "blockNumber",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "documentHash",
+          "type": "bytes32"
+        }
+      ],
+      "name": "register",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "creationBytecode": "6080604052348015600e575f5ffd5b5061017f8061001c5f395ff3fe608060405234801561000f575f5ffd5b5060043610610034575f3560e01c80635dd4a65f14610038578063e1fa8e8414610088575b5f5ffd5b61006d610046366004610133565b6001600160a01b039091165f90815260208181526040808320938352929052205480151591565b60408051921515835260208301919091520160405180910390f35b61009b610096366004610168565b61009d565b005b335f90815260208181526040808320848452909152902054156100e057604051631d12987760e31b81523360048201526024810182905260440160405180910390fd5b335f81815260208181526040808320858452825291829020439081905591519182528392917f0559ae90d56934a4645873d8c059d7dbb9785680854676c1c924a5469076d02f910160405180910390a350565b5f5f60408385031215610144575f5ffd5b82356001600160a01b038116811461015a575f5ffd5b946020939093013593505050565b5f60208284031215610178575f5ffd5b503591905056",
+  "runtimeBytecode": "608060405234801561000f575f5ffd5b5060043610610034575f3560e01c80635dd4a65f14610038578063e1fa8e8414610088575b5f5ffd5b61006d610046366004610133565b6001600160a01b039091165f90815260208181526040808320938352929052205480151591565b60408051921515835260208301919091520160405180910390f35b61009b610096366004610168565b61009d565b005b335f90815260208181526040808320848452909152902054156100e057604051631d12987760e31b81523360048201526024810182905260440160405180910390fd5b335f81815260208181526040808320858452825291829020439081905591519182528392917f0559ae90d56934a4645873d8c059d7dbb9785680854676c1c924a5469076d02f910160405180910390a350565b5f5f60408385031215610144575f5ffd5b82356001600160a01b038116811461015a575f5ffd5b946020939093013593505050565b5f60208284031215610178575f5ffd5b503591905056"
+}

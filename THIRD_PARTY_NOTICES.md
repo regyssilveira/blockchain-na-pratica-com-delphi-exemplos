@@ -17,3 +17,7 @@ Os vetores de P03 foram produzidos na autoria com ethers 6.15.0 (MIT, Richard Mo
 ## Anvil / Foundry 1.8.5 — ferramenta externa de desenvolvimento
 
 Código principal: MIT OU Apache-2.0, projeto foundry-rs/foundry, commit 51a52c59cffd940f76eddd0b4bb1791aa4b5ac7f. O leitor baixa o pacote oficial por Prepare-Anvil.ps1; não há binários Foundry versionados ou redistribuídos aqui. Dependências transitivas do pacote mantêm seus próprios termos. A utilização local validada não declara auditoria integral dessas licenças. Veja a release oficial e o inventário de ambiente do livro.
+
+## Solidity / solc 0.8.37 — compilador externo
+
+Compilador oficial 0.8.37+commit.f401782d, fonte na revisão f401782df49be312ea4ef52a2d467cf5183b5906. O arquivo LICENSE.txt dessa versão contém a GNU General Public License versão 3: https://github.com/argotorg/solidity/blob/v0.8.37/LICENSE.txt . Build-Contract.ps1 baixa separadamente o executável oficial e confere seu SHA-256; não há executável solc distribuído neste repositório. O contrato DocumentRegistry.sol é fonte original deste exemplo, sob Apache-2.0, identificada no cabeçalho. Compilador, fonte do contrato e artefato gerado são materiais distintos. O manifesto da compilação e seus resultados ficam documentados em validation/2026-10-16-p04-contract/RESULTADOS.md. Não se declara revisão integral de licenças transitivas do compilador.

@@ -1,5 +1,5 @@
 ﻿[CmdletBinding()]
-param([Parameter(Mandatory = $true)][string]$DelphiRoot, [switch]$Protocol, [switch]$Anvil)
+param([Parameter(Mandatory = $true)][string]$DelphiRoot, [switch]$Protocol, [switch]$Anvil, [switch]$BuildDemo)
 $ErrorActionPreference = 'Stop'
 $projectRoot = Split-Path $PSScriptRoot -Parent
 $compiler = Join-Path $DelphiRoot 'bin\dcc64.exe'
@@ -7,7 +7,7 @@ if (-not (Test-Path -LiteralPath $compiler)) { throw 'Compilador Win64 ausente.'
 $version = (Get-Item -LiteralPath $compiler).VersionInfo.FileVersion
 if ($version -notlike '37.*') { throw 'Exigido Delphi 13.' }
 & (Join-Path $PSScriptRoot 'Prepare-Dependencies.ps1')
-$projectName = if ($Anvil) { 'Anvil' } elseif ($Protocol) { 'Protocol' } else { 'Primitives' }
+$projectName = if ($BuildDemo) { 'DocumentRegistry.Demo' } elseif ($Anvil) { 'Anvil' } elseif ($Protocol) { 'Protocol' } else { 'Primitives' }
 $outputRoot = Join-Path $projectRoot "build\$projectName"
 $unitOutput = Join-Path $outputRoot 'dcu'
 New-Item -ItemType Directory -Path $unitOutput -Force | Out-Null
@@ -18,7 +18,8 @@ $directories = @(
 ) + @(Get-ChildItem -LiteralPath $dependencyRoot -Recurse -Filter '*.pas' -File |
     Where-Object {$_.FullName -match '\\(CryptoLib|HashLib|SimpleBaseLib)\\src\\'} |
     ForEach-Object {$_.DirectoryName} | Sort-Object -Unique)
-$workingDirectory = Join-Path $projectRoot 'tests'
+$workingDirectory = Join-Path $projectRoot $(if ($BuildDemo) { 'demos' } else { 'tests' })
+$projectFile = if ($BuildDemo) { "$projectName.dpr" } else { "$projectName.Tests.dpr" }
 $baseUri = [Uri]($workingDirectory + '\')
 $relative = @($directories | ForEach-Object {
     [Uri]::UnescapeDataString($baseUri.MakeRelativeUri([Uri]($_ + '\')).ToString()).Replace('/','\')
@@ -32,7 +33,7 @@ $includePath = @(
 $unitPath = (@($relative) + @((Join-Path $DelphiRoot 'lib\win64\release'))) -join ';'
 $arguments = @('--no-config','-B','-Q','-CC','-DCI',
     '-NSSystem;System.Win;Winapi;Vcl;Data;Xml',"-U$unitPath","-I$includePath",
-    "-E$outputRoot","-NU$unitOutput",(Join-Path $workingDirectory "$projectName.Tests.dpr"))
+    "-E$outputRoot","-NU$unitOutput",(Join-Path $workingDirectory $projectFile))
 if (($arguments -join ' ').Length -gt 30000) { throw 'Caminhos excedem o limite de comando Windows.' }
 $arguments | Set-Content -LiteralPath (Join-Path $outputRoot 'compiler-arguments.txt') -Encoding UTF8
 Push-Location $workingDirectory
@@ -40,12 +41,14 @@ try {
     & $compiler @arguments 2>&1 | Tee-Object -FilePath (Join-Path $outputRoot 'compile.log')
     if ($LASTEXITCODE -ne 0) { throw "Falha ao compilar os testes $projectName." }
 } finally { Pop-Location }
+if ($BuildDemo) { return }
 $xmlPath = Join-Path $outputRoot 'results.xml'
 $process = Start-Process -FilePath (Join-Path $outputRoot "$projectName.Tests.exe") `
     -ArgumentList @(('"--xml:' + $xmlPath + '"'), '--consolemode:quiet') `
     -WorkingDirectory $projectRoot -WindowStyle Hidden -PassThru `
     -RedirectStandardOutput (Join-Path $outputRoot 'tests.log') `
     -RedirectStandardError (Join-Path $outputRoot 'tests.stderr.log')
+$null = $process.Handle
 if (-not $process.WaitForExit(60000)) {
     $process.Kill()
     $process.WaitForExit()
