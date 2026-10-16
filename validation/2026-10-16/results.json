@@ -1,0 +1,13 @@
+{
+  "date": "2026-10-16",
+  "platform": "Windows 11 Pro x86-64",
+  "compiler": "Delphi 13 dcc64 37.0.57242.3601",
+  "overallApproved": false,
+  "scope": "Upstream library suites, not blockchain integration",
+  "suites": [
+    {"name":"SimpleBaseLib4Pascal","compiled":true,"passed":240,"failures":0},
+    {"name":"HashLib4Pascal","compiled":true,"passed":1967,"failures":0,"elapsedSeconds":5.847},
+    {"name":"CryptoLib4Pascal","compiled":true,"passed":1607,"failures":0,"elapsedSeconds":123.905},
+    {"name":"DUnitX","compiled":true,"found":373,"passed":363,"ignored":9,"failures":1,"errors":0,"reportedLeaks":0,"exitCode":1,"limitation":"Original duration assertion expects decimal comma; XML uses decimal point"}
+  ]
+}

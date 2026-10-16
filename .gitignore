@@ -1,0 +1,15 @@
+dependencies/
+build/
+*.dcu
+*.exe
+*.dll
+*.bpl
+*.dcp
+*.local
+*.identcache
+*.dproj.local
+__history/
+__recovery/
+.env
+*.pfx
+*.key
