@@ -1,0 +1,8 @@
+{
+  "simulation": "Response discarded by Delphi wrapper AFTER real Anvil acceptance",
+  "hash": "0xc8f66b46e2da4e01d331f0c07c0eb718d47cdafa3f61bf13995f41268652aab9",
+  "stateAfterLoss": "unknown",
+  "resumedState": "succeeded",
+  "sendCount": 1,
+  "checkpointObservedBeforeHttp": true
+}

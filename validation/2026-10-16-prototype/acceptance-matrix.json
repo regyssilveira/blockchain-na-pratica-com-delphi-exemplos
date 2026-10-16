@@ -154,11 +154,13 @@
       "name": "Repetibilidade",
       "inputs": "Reiniciar cliente; repetir em ambiente limpo",
       "expected": "Retomar com configuracao preservada e reproduzir sem estado oculto",
-      "observed": "13 processos executados, nonce preservado; nova rede por execucao; checkout independente ainda em verificacao final",
+      "observed": "13 processos por execucao, nonce preservado; checkout Git independente sem cache de ferramentas/dependencias repetiu 108 testes e todos os comandos em rede limpa, com as mesmas fontes normalizadas",
       "mode": "real-local-node",
-      "status": "pending-final-clean-checkout",
+      "status": "passed",
       "evidence": [
-        "prototype-processes.json"
+        "prototype-processes.json",
+        "clean-reproduction.json",
+        "clean-results.xml"
       ]
     }
   ],

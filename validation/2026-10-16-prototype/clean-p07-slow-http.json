@@ -1,0 +1,7 @@
+{
+  "simulated": true,
+  "deadlineMs": 300,
+  "serverDelayMs": 2000,
+  "observedMs": 315,
+  "requests": 2
+}

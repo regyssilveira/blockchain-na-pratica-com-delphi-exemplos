@@ -1,0 +1,35 @@
+{
+  "testedSourceCommit": "e301cb9cd77f4927bb771c11f4885e8d729f1286",
+  "finalReferenceTag": "prototype-accepted-2026-10-16",
+  "freshIndependentGitCheckout": true,
+  "initialToolCacheReused": false,
+  "initialDependencyCacheReused": false,
+  "pathContainsSpaces": true,
+  "trackedFilesUnmodified": true,
+  "allTestedSourceHashesMatch": true,
+  "shell": "Windows PowerShell 5.1.26100.9711",
+  "port": 18546,
+  "summary": {
+    "compiler": "37.0.57242.3601",
+    "target": "Win64",
+    "executed": 108,
+    "failures": 0,
+    "errors": 0,
+    "ignored": 0,
+    "exitCode": 0,
+    "passed": true
+  },
+  "nativeProcessCount": 13,
+  "registrationHash": "0x6d7b83e5fc73149a949a5842eb3ec197307f8b5ea218add887324dffa921be6a",
+  "matchesPreviousCleanNetworkRun": true,
+  "resumedNonce": "0x5",
+  "queryNonce": "0x5",
+  "stoppedNode": {
+    "realNodeStopped": true,
+    "exitCode": 1,
+    "elapsedMs": 2136,
+    "originalHash": "0x6d7b83e5fc73149a949a5842eb3ec197307f8b5ea218add887324dffa921be6a",
+    "passed": true
+  },
+  "passed": true
+}

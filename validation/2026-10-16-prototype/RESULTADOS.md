@@ -83,6 +83,10 @@ $registration = $session + '\registration.json'
 
 Os recibos são preservados ao lado do checkpoint com sufixo .receipt.json; a consulta usa .query.json. O console de demonstração anterior também permanece disponível. Depois de encerrar o nó com Ctrl+C, uma consulta deve falhar explicitamente. Uma rede nova não contém o contrato antigo: repita a implantação com checkpoints novos, sem reaproveitar silenciosamente o endereço anterior.
 
+## Reprodução independente concluída
+
+Um checkout Git independente do commit e301cb9cd77f4927bb771c11f4885e8d729f1286, sem cache prévio de ferramentas ou dependências e em pasta com espaços, repetiu 108 testes e os 13 comandos, em rede nova na porta 18546. Os hashes de todas as fontes testadas coincidem com o manifesto da versão de referência. O hash do registro também coincidiu entre as duas redes limpas. clean-reproduction.json e clean-results.xml preservam a comprovação. A versão aceita acrescenta a consolidação documental sobre essas mesmas fontes.
+
 ## Evidências e alcance
 
 summary.json e results.xml registram os testes Delphi. acceptance-matrix.json relaciona V01 a V12 às entradas, expectativas, resultados e evidências. prototype-processes.json registra cada processo de implantação, acompanhamento e consulta; as duas consultas após reiniciar o cliente conservam o nonce, sem envio adicional. stopped-node.json registra a falha depois de encerrar a instância real.
