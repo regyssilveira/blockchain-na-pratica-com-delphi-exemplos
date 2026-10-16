@@ -63,6 +63,16 @@ A etapa P02 contém os primeiros componentes do protótipo em `src/Blockchain.Pr
 
 O leitor pode executar somente esse comando após clonar o repositório e preparar o Delphi; as dependências são obtidas ou conferidas pelo script. Todos os cálculos e asserções ocorrem no executável Delphi local. Não são necessários Anvil, solc ou conta de blockchain nesta etapa. Consulte [resultados e limites de P02](validation/2026-10-16-p02/RESULTADOS.md). A aprovação numérica não significa que assinatura e transações já estejam validadas.
 
-## Licença dos exemplos
+## Keccak, ABI, RLP e assinatura de transações
+
+A etapa P03 acrescenta `src/Blockchain.Ethereum.pas`: palavras ABI estáticas, RLP, assinatura secp256k1, recuperação de remetente e montagem de transações tipo 2 com lista de acesso vazia. A execução combinada tem 76 testes aprovados, incluindo a regressão de P02. São testes offline contra vetores fixos independentes; ainda não demonstram aceitação por um nó.
+
+```powershell
+.\scripts\Test-Protocol.ps1 -DelphiRoot 'C:\Program Files (x86)\Embarcadero\Studio\37.0'
+```
+
+O comando prepara as mesmas dependências e compila um executável Delphi nativo. Não requer carteira, rede Ethereum, Node.js ou Python. Consulte [resultados e limites P03](validation/2026-10-16-p03/RESULTADOS.md) e a [procedência dos vetores](fixtures/p03/PROVENIENCIA.md). Os dados de chave do exemplo são deliberadamente públicos e exclusivos do teste.
+
+## Licença do material
 
 O código original e os scripts deste repositório usam Apache License 2.0, em `LICENSE`. As dependências mantêm suas próprias licenças e avisos, descritos em `THIRD_PARTY_NOTICES.md`. Elas são baixadas de suas origens e não são incorporadas ao histórico deste repositório.

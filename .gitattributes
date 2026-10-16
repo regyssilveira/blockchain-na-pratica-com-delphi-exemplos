@@ -1,3 +1,4 @@
 # O checksum do manifesto identifica os bytes exatos do patch.
 patches/*.patch -text -whitespace
 fixtures/p02/* -text
+fixtures/p03/*.json -text

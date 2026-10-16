@@ -1,0 +1,12 @@
+{
+  "generator": "ethers",
+  "version": "6.15.0",
+  "packageUrl": "https://registry.npmjs.org/ethers/-/ethers-6.15.0.tgz",
+  "registryIntegrity": "sha512-Kf/3ZW54L4UT0pZtsY/rf+EkBU7Qi5nnhonjUb8yTXcxH3cdcWrV2cRyk0Xk/4jK6OoHhxxZHriyhje20If2hQ==",
+  "integrityVerified": true,
+  "packageSHA256": "0ca94f1c7f93ba0450ece0224e83fbbf9e840ea8ecbe05f50550d98f4cfaa482",
+  "referenceSHA256": "1f7d983405426de44ebe15f8f9c22d1b54b85b780d8cca844680cd24ecffd7c2",
+  "nodeVersion": "v25.4.0",
+  "scope": "Independent fixture authoring only; not a Delphi executable dependency",
+  "license": "MIT"
+}

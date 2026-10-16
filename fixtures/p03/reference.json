@@ -1,0 +1,204 @@
+{
+  "generator": "ethers 6.15.0",
+  "keccak": [
+    {
+      "input": "0x",
+      "hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
+    },
+    {
+      "input": "0x616263",
+      "hash": "0x4e03657aea45a94fc7d47ba826c8d667c0d1e6e33a64a036ec44f58fa12d6c45"
+    },
+    {
+      "input": "0x00",
+      "hash": "0xbc36789e7a1e281436464229828f817d6612f7b477d66591ff96a9e064bcc98a"
+    },
+    {
+      "input": "0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "hash": "0xa9c584056064687e149968cbab758a3376d22aedc6a55823d1b3ecbee81b8fb9"
+    }
+  ],
+  "rlp": [
+    {
+      "input": "0x",
+      "encoded": "0x80"
+    },
+    {
+      "input": "0x00",
+      "encoded": "0x00"
+    },
+    {
+      "input": "0x7f",
+      "encoded": "0x7f"
+    },
+    {
+      "input": "0x80",
+      "encoded": "0x8180"
+    },
+    {
+      "input": "0x646f67",
+      "encoded": "0x83646f67"
+    },
+    {
+      "input": [],
+      "encoded": "0xc0"
+    },
+    {
+      "input": [
+        "0x636174",
+        "0x646f67"
+      ],
+      "encoded": "0xc88363617483646f67"
+    },
+    {
+      "input": [
+        [],
+        [
+          []
+        ],
+        [
+          [],
+          [
+            []
+          ]
+        ]
+      ],
+      "encoded": "0xc7c0c1c0c3c0c1c0"
+    },
+    {
+      "input": "0x61616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161",
+      "encoded": "0xb761616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161"
+    },
+    {
+      "input": "0x6161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161",
+      "encoded": "0xb8386161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161"
+    },
+    {
+      "input": [
+        "0x616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161"
+      ],
+      "encoded": "0xf7b6616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161"
+    },
+    {
+      "input": [
+        "0x61616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161"
+      ],
+      "encoded": "0xf838b761616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161"
+    }
+  ],
+  "abi": [
+    {
+      "signature": "baz(uint32,bool)",
+      "types": [
+        "uint256",
+        "bool"
+      ],
+      "values": [
+        "69",
+        true
+      ],
+      "selector": "0xcdcd77c0",
+      "words": "0x00000000000000000000000000000000000000000000000000000000000000450000000000000000000000000000000000000000000000000000000000000001",
+      "call": "0xcdcd77c000000000000000000000000000000000000000000000000000000000000000450000000000000000000000000000000000000000000000000000000000000001"
+    },
+    {
+      "signature": "record(bytes32)",
+      "types": [
+        "bytes32"
+      ],
+      "values": [
+        "0xabababababababababababababababababababababababababababababababab"
+      ],
+      "selector": "0xb5c645bd",
+      "words": "0xabababababababababababababababababababababababababababababababab",
+      "call": "0xb5c645bdabababababababababababababababababababababababababababababababab"
+    },
+    {
+      "signature": "lookup(address,bytes32)",
+      "types": [
+        "address",
+        "bytes32"
+      ],
+      "values": [
+        "0x9d8A62f656a8d1615C1294fd71e9CFb3E4855A4F",
+        "0x0000000000000000000000000000000000000000000000000000000000000001"
+      ],
+      "selector": "0x5dd4a65f",
+      "words": "0x0000000000000000000000009d8a62f656a8d1615c1294fd71e9cfb3e4855a4f0000000000000000000000000000000000000000000000000000000000000001",
+      "call": "0x5dd4a65f0000000000000000000000009d8a62f656a8d1615c1294fd71e9cfb3e4855a4f0000000000000000000000000000000000000000000000000000000000000001"
+    }
+  ],
+  "transactions": [
+    {
+      "fields": {
+        "chainId": "1",
+        "nonce": "0",
+        "maxPriorityFeePerGas": "1000000000",
+        "maxFeePerGas": "2000000000",
+        "gasLimit": "21000",
+        "to": "0x3535353535353535353535353535353535353535",
+        "value": "1000000000000000000",
+        "data": "0x"
+      },
+      "privateKey": "0x4646464646464646464646464646464646464646464646464646464646464646",
+      "unsigned": "0x02ef0180843b9aca008477359400825208943535353535353535353535353535353535353535880de0b6b3a764000080c0",
+      "signingHash": "0xfda4b0fb774359f7f19135727b7afe93ac4ac51dcabef74b8d3a7346b032d6b9",
+      "raw": "0x02f8720180843b9aca008477359400825208943535353535353535353535353535353535353535880de0b6b3a764000080c080a09a87e270431071f37718dfa324120bcf9fa09f526a3407e1bf82a6e321115297a07e679504320e1dbeb7ea11d538dcf0f79f090545ea7c11f68e0fddd32c23e860",
+      "hash": "0x8536ff9daaec18f356956ab94382a8c0956fb978ac01b1d54602b14ba418439b",
+      "sender": "0x9d8a62f656a8d1615c1294fd71e9cfb3e4855a4f",
+      "r": "0x9a87e270431071f37718dfa324120bcf9fa09f526a3407e1bf82a6e321115297",
+      "s": "0x7e679504320e1dbeb7ea11d538dcf0f79f090545ea7c11f68e0fddd32c23e860",
+      "yParity": 0
+    },
+    {
+      "fields": {
+        "chainId": "31337",
+        "nonce": "128",
+        "maxPriorityFeePerGas": "1",
+        "maxFeePerGas": "3000000000",
+        "gasLimit": "100000",
+        "to": "0x3535353535353535353535353535353535353535",
+        "value": "0",
+        "data": "0xb5c645bdabababababababababababababababababababababababababababababababab"
+      },
+      "privateKey": "0x4646464646464646464646464646464646464646464646464646464646464646",
+      "unsigned": "0x02f84b827a6981800184b2d05e00830186a094353535353535353535353535353535353535353580a4b5c645bdababababababababababababababababababababababababababababababababc0",
+      "signingHash": "0xa365e6c5704cdd55f0b0f4079cd648d639bc08e27dc45f716f981d08d663a848",
+      "raw": "0x02f88e827a6981800184b2d05e00830186a094353535353535353535353535353535353535353580a4b5c645bdababababababababababababababababababababababababababababababababc080a06bd4585c6494cdc168e5909b677d8050d0f6487e50e2c49ca4cd1df5aafa3df6a00aa38c05b5edab4e1de0ff8c4add891e3daf700ace81bd408fcb008b1f246d84",
+      "hash": "0xdac118737438e6b5a61adfc90f7d9f9578e854ccbb1a5adf792663cd558d7929",
+      "sender": "0x9d8a62f656a8d1615c1294fd71e9cfb3e4855a4f",
+      "r": "0x6bd4585c6494cdc168e5909b677d8050d0f6487e50e2c49ca4cd1df5aafa3df6",
+      "s": "0x0aa38c05b5edab4e1de0ff8c4add891e3daf700ace81bd408fcb008b1f246d84",
+      "yParity": 0
+    },
+    {
+      "fields": {
+        "chainId": "31337",
+        "nonce": "1",
+        "maxPriorityFeePerGas": "0",
+        "maxFeePerGas": "1",
+        "gasLimit": "100000",
+        "to": "",
+        "value": "0",
+        "data": "0x60006000"
+      },
+      "privateKey": "0x4646464646464646464646464646464646464646464646464646464646464646",
+      "unsigned": "0x02d2827a69018001830186a080808460006000c0",
+      "signingHash": "0xe5a4529d98dc49bb03b1b51cca84bb6c3fcfb545b8b22dfe21a9244c4046b024",
+      "raw": "0x02f855827a69018001830186a080808460006000c001a0b65a9721e57ac569c53b650e3ae6c8ea49a41149d90130d0ede0c5caa2804874a01d7d5b9f144b22709a481fcd53c5f834ce9f48b78cc6263fd4e1a27f77d499d2",
+      "hash": "0x932c3a33ab547bb64cb5388348867a27eaac948dfcd64ce03087936c23a2070f",
+      "sender": "0x9d8a62f656a8d1615c1294fd71e9cfb3e4855a4f",
+      "r": "0xb65a9721e57ac569c53b650e3ae6c8ea49a41149d90130d0ede0c5caa2804874",
+      "s": "0x1d7d5b9f144b22709a481fcd53c5f834ce9f48b78cc6263fd4e1a27f77d499d2",
+      "yParity": 1
+    }
+  ],
+  "eip155Digest": {
+    "privateKey": "0x4646464646464646464646464646464646464646464646464646464646464646",
+    "hash": "0xdaf5a779ae972f972197303d7b574746c7ef83eadac0f2791ad23db92e4c8e53",
+    "r": "0x28ef61340bd939bc2195fe537567866003e1a15d3c71ff63e1590620aa636276",
+    "s": "0x67cbe9d8997f761aecb703304b3800ccf555c9f3dc64214b297fb1966a3b6d83",
+    "yParity": 0,
+    "sender": "0x9d8a62f656a8d1615c1294fd71e9cfb3e4855a4f"
+  }
+}
