@@ -14,7 +14,8 @@ uses
   Blockchain.Primitives.Tests in 'Blockchain.Primitives.Tests.pas',
   Blockchain.Ethereum.Tests in 'Blockchain.Ethereum.Tests.pas',
   Blockchain.Anvil.Tests in 'Blockchain.Anvil.Tests.pas',
-  Blockchain.DocumentRegistry.Tests in 'Blockchain.DocumentRegistry.Tests.pas';
+  Blockchain.DocumentRegistry.Tests in 'Blockchain.DocumentRegistry.Tests.pas',
+  Blockchain.Reliability.Tests in 'Blockchain.Reliability.Tests.pas';
 
 var
   Runner: ITestRunner;

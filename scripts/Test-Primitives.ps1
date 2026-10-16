@@ -1,5 +1,5 @@
 ﻿[CmdletBinding()]
-param([Parameter(Mandatory = $true)][string]$DelphiRoot, [switch]$Protocol, [switch]$Anvil, [switch]$BuildDemo)
+param([Parameter(Mandatory = $true)][string]$DelphiRoot, [switch]$Protocol, [switch]$Anvil, [switch]$BuildDemo, [switch]$BuildCli)
 $ErrorActionPreference = 'Stop'
 $projectRoot = Split-Path $PSScriptRoot -Parent
 $compiler = Join-Path $DelphiRoot 'bin\dcc64.exe'
@@ -7,7 +7,7 @@ if (-not (Test-Path -LiteralPath $compiler)) { throw 'Compilador Win64 ausente.'
 $version = (Get-Item -LiteralPath $compiler).VersionInfo.FileVersion
 if ($version -notlike '37.*') { throw 'Exigido Delphi 13.' }
 & (Join-Path $PSScriptRoot 'Prepare-Dependencies.ps1')
-$projectName = if ($BuildDemo) { 'DocumentRegistry.Demo' } elseif ($Anvil) { 'Anvil' } elseif ($Protocol) { 'Protocol' } else { 'Primitives' }
+$projectName = if ($BuildCli) { 'DocumentRegistry.Cli' } elseif ($BuildDemo) { 'DocumentRegistry.Demo' } elseif ($Anvil) { 'Anvil' } elseif ($Protocol) { 'Protocol' } else { 'Primitives' }
 $outputRoot = Join-Path $projectRoot "build\$projectName"
 $unitOutput = Join-Path $outputRoot 'dcu'
 New-Item -ItemType Directory -Path $unitOutput -Force | Out-Null
@@ -18,8 +18,8 @@ $directories = @(
 ) + @(Get-ChildItem -LiteralPath $dependencyRoot -Recurse -Filter '*.pas' -File |
     Where-Object {$_.FullName -match '\\(CryptoLib|HashLib|SimpleBaseLib)\\src\\'} |
     ForEach-Object {$_.DirectoryName} | Sort-Object -Unique)
-$workingDirectory = Join-Path $projectRoot $(if ($BuildDemo) { 'demos' } else { 'tests' })
-$projectFile = if ($BuildDemo) { "$projectName.dpr" } else { "$projectName.Tests.dpr" }
+$workingDirectory = Join-Path $projectRoot $(if ($BuildDemo -or $BuildCli) { 'demos' } else { 'tests' })
+$projectFile = if ($BuildDemo -or $BuildCli) { "$projectName.dpr" } else { "$projectName.Tests.dpr" }
 $baseUri = [Uri]($workingDirectory + '\')
 $relative = @($directories | ForEach-Object {
     [Uri]::UnescapeDataString($baseUri.MakeRelativeUri([Uri]($_ + '\')).ToString()).Replace('/','\')
@@ -41,7 +41,7 @@ try {
     & $compiler @arguments 2>&1 | Tee-Object -FilePath (Join-Path $outputRoot 'compile.log')
     if ($LASTEXITCODE -ne 0) { throw "Falha ao compilar os testes $projectName." }
 } finally { Pop-Location }
-if ($BuildDemo) { return }
+if ($BuildDemo -or $BuildCli) { return }
 $xmlPath = Join-Path $outputRoot 'results.xml'
 $process = Start-Process -FilePath (Join-Path $outputRoot "$projectName.Tests.exe") `
     -ArgumentList @(('"--xml:' + $xmlPath + '"'), '--consolemode:quiet') `

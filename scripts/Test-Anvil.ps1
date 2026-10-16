@@ -1,5 +1,5 @@
 ﻿[CmdletBinding()]
-param([Parameter(Mandatory=$true)][string]$DelphiRoot, [ValidateRange(1024,65535)][int]$Port=18545, [string]$DocumentPath)
+param([Parameter(Mandatory=$true)][string]$DelphiRoot, [ValidateRange(1024,65535)][int]$Port=18545, [string]$DocumentPath, [switch]$FullPrototype)
 $ErrorActionPreference = 'Stop'
 $root = Split-Path $PSScriptRoot -Parent
 if (-not $DocumentPath) { $DocumentPath = Join-Path $root 'fixtures\p02\document-a.txt' }
@@ -34,6 +34,7 @@ try {
     $demo.WaitForExit()
     Get-Content (Join-Path $output 'demo.log')
     if ($demo.ExitCode -ne 0) { throw 'Exemplo console falhou.' }
+    if ($FullPrototype) { & (Join-Path $PSScriptRoot 'Run-PrototypeStages.ps1') -DelphiRoot $DelphiRoot -Port $Port -DocumentPath $document }
 } finally {
     if ($null -ne $node -and -not $node.HasExited) { $node.Kill(); $node.WaitForExit() }
     $env:P04_ANVIL_PORT = $oldPort

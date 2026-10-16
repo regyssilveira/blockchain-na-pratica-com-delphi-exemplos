@@ -1,0 +1,167 @@
+{
+  "sourceTag": "prototype-accepted-2026-10-16",
+  "target": "Delphi 13 Win64",
+  "command": "scripts/Test-Prototype.ps1 -DelphiRoot 'C:\\Program Files (x86)\\Embarcadero\\Studio\\37.0'",
+  "cases": [
+    {
+      "id": "V01",
+      "name": "Integridade",
+      "inputs": "A, copia, B e vazio",
+      "expected": "Hashes independentes e segunda implementacao Pascal",
+      "observed": "44 testes P02 incluidos; referencias fixas preservadas",
+      "mode": "native-offline",
+      "status": "passed",
+      "evidence": [
+        "results.xml",
+        "../../fixtures/p02/sha256-reference.json"
+      ]
+    },
+    {
+      "id": "V02",
+      "name": "Registro completo",
+      "inputs": "Arquivo A, conta A",
+      "expected": "Assinatura Delphi, recibo/evento/consulta coerentes",
+      "observed": "Registro incluido, evento e bloco conferidos pelo cliente e testes",
+      "mode": "real-local-node",
+      "status": "passed",
+      "evidence": [
+        "contract-acceptance.json",
+        "process-checkpoints/registration.json.receipt.json"
+      ]
+    },
+    {
+      "id": "V03",
+      "name": "Ausencia e alteracao",
+      "inputs": "Documento B e copia de A",
+      "expected": "B ausente para a conta; copia reconhecida",
+      "observed": "verify-copy exit 0; verify-changed exit 4; hash distinto",
+      "mode": "real-local-node",
+      "status": "passed",
+      "evidence": [
+        "prototype-processes.json",
+        "process-checkpoints/12-verify-copy.log",
+        "process-checkpoints/13-verify-changed.log"
+      ]
+    },
+    {
+      "id": "V04",
+      "name": "Duplicidade",
+      "inputs": "Novo nonce, mesmo par conta/hash",
+      "expected": "Reverter sem substituir registro",
+      "observed": "Erro customizado; recibo status 0x0; registro original preservado",
+      "mode": "real-local-node",
+      "status": "passed",
+      "evidence": [
+        "contract-acceptance.json"
+      ]
+    },
+    {
+      "id": "V05",
+      "name": "Separacao por conta",
+      "inputs": "Conta B consulta/registra hash de A",
+      "expected": "Ausencia inicial e registro independente",
+      "observed": "Registro B status 0x1; bloco do registro A conservado",
+      "mode": "real-local-node",
+      "status": "passed",
+      "evidence": [
+        "contract-acceptance.json"
+      ]
+    },
+    {
+      "id": "V06",
+      "name": "Entradas invalidas",
+      "inputs": "Arquivo ausente, hash curto, configuracao/checkpoint invalidos e chamada truncada",
+      "expected": "Erro explicito, nenhum envio local invalido e reversao contratual",
+      "observed": "Guardas P04; cinco corrupcoes de checkpoint; falha de journal impede envio; chamada truncada status 0x0",
+      "mode": "real-local-node",
+      "status": "passed",
+      "evidence": [
+        "results.xml",
+        "contract-acceptance.json"
+      ]
+    },
+    {
+      "id": "V07",
+      "name": "Rede e contrato",
+      "inputs": "Rede divergente, endereco sem codigo, runtime diferente",
+      "expected": "Interromper antes de assinar/enviar",
+      "observed": "Guardas conferidas no no real; nonce preservado; chave invalida nao e usada antes da validacao de rede",
+      "mode": "real-local-node",
+      "status": "passed",
+      "evidence": [
+        "contract-acceptance.json",
+        "results.xml"
+      ]
+    },
+    {
+      "id": "V08",
+      "name": "Falhas de comunicacao",
+      "inputs": "No real encerrado; respostas HTTP/protocolo simuladas",
+      "expected": "Prazo finito e nenhum falso sucesso",
+      "observed": "No parado exit 1; treze envelopes invalidos, erro JSON-RPC distinto, HTTP 503 e recibos invalidos rejeitados",
+      "mode": "real-stopped-node-and-labelled-http-simulations",
+      "status": "passed",
+      "evidence": [
+        "stopped-node.json",
+        "results.xml",
+        "p07-slow-http.json"
+      ]
+    },
+    {
+      "id": "V09",
+      "name": "Acompanhamento",
+      "inputs": "Mineracao pausada e retomada",
+      "expected": "Expirar espera, preservar hash e nao reenviar",
+      "observed": "Pendencia real 30 s; envio unico; retomada inclui a mesma transacao; cancelamento HTTP total testado",
+      "mode": "real-pending-node-and-labelled-response-loss-simulation",
+      "status": "passed",
+      "evidence": [
+        "p07-real-pending.json",
+        "p07-slow-http.json",
+        "p07-lost-response.json",
+        "prototype-processes.json"
+      ]
+    },
+    {
+      "id": "V10",
+      "name": "Falha de execucao",
+      "inputs": "Duplicidade e chamada truncada; envio de conta sem fundos",
+      "expected": "Distinguir rejeicao de envio e recibo revertido",
+      "observed": "Reversoes status 0x0; checkpoint de rejeicao nao vira pendencia; sem alterar registro anterior",
+      "mode": "real-local-node",
+      "status": "passed",
+      "evidence": [
+        "contract-acceptance.json",
+        "results.xml"
+      ]
+    },
+    {
+      "id": "V11",
+      "name": "Precisao e assinatura",
+      "inputs": "2^53+1, 2^64, max uint256, vetores tipo 2 e remetente no no",
+      "expected": "Exatidao e assinatura com referencia independente aceita pelo no",
+      "observed": "P02/P03 incluidos; remetente real confere; ethers apenas na autoria dos vetores congelados",
+      "mode": "native-offline-and-real-node",
+      "status": "passed",
+      "evidence": [
+        "results.xml",
+        "transfer-acceptance.json",
+        "../../fixtures/p03/provenance.json"
+      ]
+    },
+    {
+      "id": "V12",
+      "name": "Repetibilidade",
+      "inputs": "Reiniciar cliente; repetir em ambiente limpo",
+      "expected": "Retomar com configuracao preservada e reproduzir sem estado oculto",
+      "observed": "13 processos executados, nonce preservado; nova rede por execucao; checkout independente ainda em verificacao final",
+      "mode": "real-local-node",
+      "status": "pending-final-clean-checkout",
+      "evidence": [
+        "prototype-processes.json"
+      ]
+    }
+  ],
+  "humanEditorialApproval": "not implied by technical execution",
+  "prototypeScope": "P00-P08 integration only; didactic blockchain is outside this prototype"
+}

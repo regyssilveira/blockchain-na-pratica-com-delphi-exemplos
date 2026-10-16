@@ -2,7 +2,7 @@
 
 Exemplos e laboratório local do livro de Régys Borges da Silveira, subtítulo *Entenda os conceitos, descubra onde usar e implemente passo a passo*.
 
-O projeto editorial é separado e privado. Este repositório público reúne a preparação técnica reproduzível. Ainda não há cliente blockchain ou contrato implementado.
+O projeto editorial é separado e privado. Este repositório público contém o protótipo de integração concluído: contrato de documentos, cliente Delphi nativo, acompanhamento persistido e testes locais. A versão técnica de referência é `prototype-accepted-2026-10-16`.
 
 ## Requisitos
 
@@ -10,7 +10,7 @@ O projeto editorial é separado e privado. Este repositório público reúne a p
 - PowerShell e Git para obter as revisões de fontes.
 - Internet para obter os fontes. A preparação e os testes desta etapa não usam conta GitHub, provedor blockchain, carteira ou dinheiro real.
 
-Não são necessários componentes visuais instalados na IDE, OpenSSL externo, Docker, Node.js ou Python. A assinatura e a integração Ethereum ainda serão validadas em etapas futuras. Anvil e solc não são necessários para executar estas suítes.
+Não são necessários componentes visuais instalados na IDE, OpenSSL externo, Docker, Node.js ou Python. Assinatura e interação são Delphi nativo. Anvil 1.8.5 e solc 0.8.37 são as ferramentas externas para nó e compilação do contrato, obtidas pelo roteiro com checksum. As suítes offline de bytes/protocolo podem ser executadas sem essas ferramentas.
 
 ## Repetir localmente
 
@@ -20,6 +20,17 @@ Clone em uma pasta de sua escolha:
 git clone https://github.com/regyssilveira/blockchain-na-pratica-com-delphi-exemplos.git
 cd blockchain-na-pratica-com-delphi-exemplos
 ```
+
+Para reproduzir o protótipo completo:
+
+```powershell
+git checkout prototype-accepted-2026-10-16
+.\scripts\Test-Prototype.ps1 -DelphiRoot 'C:\Program Files (x86)\Embarcadero\Studio\37.0'
+```
+
+A suíte própria tem **108 testes aprovados**, sem ignorados, falhas ou erros. O roteiro também executa o console, retoma acompanhamento/consulta em processos novos e verifica a falha depois de encerrar o nó real. Aceita `-DocumentPath` e `-Port`. Consulte o [roteiro completo e a matriz V01–V12](validation/2026-10-16-prototype/RESULTADOS.md), incluindo os comandos Delphi separados para explorar cada conceito localmente.
+
+## Suítes de terceiros e histórico
 
 Execute em PowerShell. Se a política local bloquear scripts, revise os arquivos e use uma sessão com autorização adequada às regras de sua máquina; o roteiro não altera a política global.
 
@@ -73,9 +84,9 @@ A etapa P03 acrescenta `src/Blockchain.Ethereum.pas`: palavras ABI estáticas, R
 
 O comando prepara as mesmas dependências e compila um executável Delphi nativo. Não requer carteira, rede Ethereum, Node.js ou Python. Consulte [resultados e limites P03](validation/2026-10-16-p03/RESULTADOS.md) e a [procedência dos vetores](fixtures/p03/PROVENIENCIA.md). Os dados de chave do exemplo são deliberadamente públicos e exclusivos do teste.
 
-## P04 concluído: contrato de documentos e console Delphi
+## Histórico P04: contrato de documentos e console Delphi
 
-O roteiro compila o contrato com solc 0.8.37 fixado, prepara Anvil 1.8.5 local, executa **78 testes**, compila o console Delphi e registra um arquivo. Delphi calcula SHA-256, assina a implantação e o registro, envia as transações, confere o código implantado e consulta o resultado. Somente nó e compilador Solidity são externos.
+Na tag `prototype-p04-complete-2026-10-16`, o roteiro compila o contrato com solc 0.8.37 fixado, prepara Anvil 1.8.5 local, executa **78 testes**, compila o console Delphi e registra um arquivo. Delphi calcula SHA-256, assina a implantação e o registro, envia as transações, confere o código implantado e consulta o resultado. Somente nó e compilador Solidity são externos.
 
 ```powershell
 .\scripts\Test-Anvil.ps1 -DelphiRoot 'C:\Program Files (x86)\Embarcadero\Studio\37.0'
