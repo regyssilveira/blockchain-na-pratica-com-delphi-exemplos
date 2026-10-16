@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "criteria": [
+    {
+      "id": "B08",
+      "passed": true
+    },
+    {
+      "id": "B09",
+      "passed": true
+    },
+    {
+      "id": "B10",
+      "passed": true
+    },
+    {
+      "id": "B11",
+      "passed": true
+    },
+    {
+      "id": "B12",
+      "passed": true
+    },
+    {
+      "id": "B13",
+      "passed": true
+    }
+  ],
+  "sourceCommit": "b3bff28bb6f45aa909ec836178d0549c29fa9beb",
+  "evidence": "scenario.json",
+  "cleanReproduction": "clean-checkout/reproduction.json"
+}

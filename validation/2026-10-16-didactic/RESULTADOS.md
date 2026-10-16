@@ -20,3 +20,5 @@ Os três arquivos finais foram carregados e validados por processos CLI separado
 A regressão da integração Anvil executou novamente 108 testes e o percurso de clientes independentes com sucesso depois da alteração no helper de compilação. Não houve alteração nas versões/licenças das dependências. Código original Apache-2.0; fontes reutilizados mantêm os avisos de THIRD_PARTY_NOTICES.md.
 
 Limites: modelo restrito a loopback e entradas pequenas, chaves públicas de laboratório, prova de trabalho fraca, nenhuma finalidade ou segurança de produção. Hash não comprova identidade civil ou autoria. Capítulos do livro continuam planejamento; esta entrega valida seus exemplos técnicos.
+
+Reprodução independente aprovada: checkout Git sem hardlinks em pasta com espaços, dependências obtidas novamente, Windows PowerShell 5.1 e portas 18581–18584. Commit das fontes testadas `b3bff28bb6f45aa909ec836178d0549c29fa9beb`; fontes coincidem após normalizar CRLF/LF. Resultado idêntico: 114 testes, 14 cenários, ciclo de vida e hash final. Evidências em clean-checkout/. A versão final acrescenta somente documentação/evidências a essas fontes.

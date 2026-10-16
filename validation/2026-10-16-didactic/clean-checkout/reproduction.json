@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "testedSourceCommit": "b3bff28bb6f45aa909ec836178d0549c29fa9beb",
+  "independentClone": true,
+  "sharedDependencyCache": false,
+  "windowsPowerShell": "5.1",
+  "basePort": 18581,
+  "sourcesMatchAfterLFNormalization": true,
+  "finalHash": "00300f1dbbb18703ca3d4428ccda1dbd7a22f0ab5da38433b967e83aaa34350a",
+  "unitTests": 114,
+  "nativeScenarioCases": 14,
+  "lifecyclePassed": true
+}
