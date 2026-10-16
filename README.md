@@ -4,6 +4,16 @@ Exemplos e laboratório local do livro de Régys Borges da Silveira, subtítulo 
 
 O projeto editorial é separado e privado. Este repositório público contém o protótipo de integração concluído: contrato de documentos, cliente Delphi nativo, acompanhamento persistido e testes locais. A versão técnica de referência é `prototype-accepted-2026-10-16`.
 
+## Blockchain própria em Delphi
+
+A Parte 3 também possui implementação e validação próprias: blocos, assinaturas, prova de trabalho, persistência e nós Delphi. Referência `didactic-chain-accepted-2026-10-16`; não usa Anvil nem solc.
+
+```powershell
+.\scripts\Test-Didactic.ps1 -DelphiRoot 'C:\Program Files (x86)\Embarcadero\Studio\37.0'
+```
+
+São 114 testes (incluindo os 76 offline anteriores), 14 cenários com processos reais e verificação de encerramento dos filhos do supervisor. Consulte o [percurso dos capítulos 8–13](chapters/part03/README.md), com comandos manuais e limites, e os [resultados](validation/2026-10-16-didactic/RESULTADOS.md). O roteiro de integração abaixo permanece separado.
+
 ## Requisitos
 
 - Windows x86-64 e Delphi 13 com compilador Win64, bibliotecas padrão e DUnit. Referência observada: build 37.0.57242.3601. O leitor deve ter uma licença Delphi adequada à sua utilização.

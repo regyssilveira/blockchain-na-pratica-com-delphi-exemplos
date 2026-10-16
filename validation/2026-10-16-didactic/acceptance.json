@@ -1,0 +1,16 @@
+﻿{
+    "passed":  true,
+    "compiler":  "37.0.57242.3601",
+    "target":  "Win64",
+    "executed":  114,
+    "failures":  0,
+    "errors":  0,
+    "ignored":  0,
+    "nativeScenarioCases":  14,
+    "finalHash":  "00300f1dbbb18703ca3d4428ccda1dbd7a22f0ab5da38433b967e83aaa34350a",
+    "finalHeight":  "7",
+    "work":  "1792",
+    "runDirectory":  "D:\\Livros\\blockchain-na-pratica-com-delphi-exemplos\\build\\Didactic\\runs\\8939a5697eef44fabf6ce33c6d90d62d",
+    "basePort":  18571,
+    "externalNodeRequired":  false
+}

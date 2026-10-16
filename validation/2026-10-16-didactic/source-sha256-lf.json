@@ -1,0 +1,17 @@
+{
+  "demos/Didactic.Cli.dpr": "ca465a163ef92a1c63f6d71e021552bbdcdd428c7e0432fc2b7a6858990adc3a",
+  "demos/Didactic.Node.dpr": "49906b1c4bcf2af09460bc74b761b73b8eec0dc7b0d7c031bf9e6f2e13086614",
+  "demos/Didactic.Scenario.dpr": "492e9cf95e881857763025977c1896f5a32bd9fe88371515954237dd0a3f02e6",
+  "scripts/Test-Didactic.ps1": "e439445bc2b9cd84d56bc8ed3842654efc73fbf0bafd99d19f22e7fa8463e78a",
+  "scripts/Test-Primitives.ps1": "bf7817f188db30e1db2ae93055d6c547ec12d2cbc92a4d115edee13f0df21330",
+  "src/Didactic.Block.pas": "b8f748dbcd7164644166a9ba2c1990f4fd368a50716ef3a83484b41fa55b8b76",
+  "src/Didactic.Chain.pas": "a3eaccae9e72c4a5669571193c6f7416c4ad8a50002b10ba13e063d71d053222",
+  "src/Didactic.Codec.pas": "e94b316feb4a4a32bbbbe4b53e7316d96710b600356d94b80b962d2e1c804912",
+  "src/Didactic.Http.pas": "24c1d6da8c0cbf3f01e25fca2881c6f68c0fbba982f7189686b9f928944fe18d",
+  "src/Didactic.LabClient.pas": "57d9cb1189e6fb0ad843f0120d449c13b442377a536061dbd741ef07e9c2b8b8",
+  "src/Didactic.NodeService.pas": "693d0f5705226830ef827a0b26b61f5216ce5373ab3efa457f6de22bf511dbb3",
+  "src/Didactic.Transaction.pas": "2abd5e02d7ba026a4dcdd12ee7bc2a3439bbed1489d33ea40463bd73074c2cb3",
+  "tests/Didactic.Core.Tests.pas": "f4b831e2ff85037b5498c224bbd0f469506c3643eefd39006fa0656a16c3f184",
+  "tests/Didactic.ProcessHarness.pas": "8621cd1614c158508f9e7d645d698ff944e02ad8ebe742f6493d06a607524261",
+  "tests/Didactic.Tests.dpr": "7b520ce5e925fff17ee3b7d4e5d2e044c8bb7bb5475aaa6eec08bed786f54c31"
+}
