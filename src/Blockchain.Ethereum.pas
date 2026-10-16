@@ -298,7 +298,7 @@ begin
   Parameters := Domain;
   Signer := TECDsaSigner.Create(THMacDsaKCalculator.Create(TDigestUtilities.GetDigest('SHA-256')));
   Signer.Init(True, TECPrivateKeyParameters.Create(PrivateScalar(APrivateKey), Parameters));
-  // RFC 6979 usa HMAC-SHA256 para o nonce; o digest assinado ja e Keccak-256.
+  // RFC 6979 usa HMAC-SHA256 internamente; ADigest ja foi preparado pelo chamador.
   Components := Signer.GenerateSignature(ADigest);
   Result.R := Components[0];
   Result.S := Components[1];

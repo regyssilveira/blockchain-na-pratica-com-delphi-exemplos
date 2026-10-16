@@ -1,0 +1,7 @@
+{
+  "src/Blockchain.Ethereum.pas": "ccfa25c7ede7d5a05a4306e3de5f69090a99660f5499421d25409ee96d207c86",
+  "src/Blockchain.Primitives.pas": "cf62f8b91542a8d79ce9bdd3cf42015fd436f7a02be8ed5dab566ebad1fc7ec5",
+  "demos/Chapter06.Signatures.dpr": "87ad4ef250a86dba465f8606e1f8572b7870a6b4a794359791e8ded5f99d75fe",
+  "scripts/Test-Chapter06.ps1": "41b6a4cf28a7c9e2bf385381248fb4b6375ab9239da16f6e2bf1da5e6d58536c",
+  "scripts/Test-Primitives.ps1": "07993dba8af5645e3c6a7f5f1091330d0e9c88eba3690ad9f01d4f8f359e8cfd"
+}

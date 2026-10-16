@@ -7,7 +7,7 @@ Exemplo do capítulo 6. `demos/Chapter06.Signatures.dpr` reutiliza as funções 
 Requisitos: Windows x64, Delphi 13 Win64 instalado/licenciado, PowerShell 5.1 ou 7 e Git. O preparo inicial obtém as fontes fixadas de dependencies.lock.json. Não requer nó, Anvil, solc, carteira, Node.js ou Python. Código original Apache-2.0; dependências mantêm suas licenças em THIRD_PARTY_NOTICES.md.
 
 ```powershell
-git checkout chapter06-examples-2026-10-16
+git checkout chapter06-examples-r1-2026-10-16
 .\scripts\Test-Chapter06.ps1 -DelphiRoot 'C:\Program Files (x86)\Embarcadero\Studio\37.0'
 ```
 

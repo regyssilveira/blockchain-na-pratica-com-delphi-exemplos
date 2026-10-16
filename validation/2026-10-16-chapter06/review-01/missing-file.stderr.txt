@@ -1,0 +1,1 @@
+EFOpenError: Cannot open file "D:\Livros\blockchain-na-pratica-com-delphi-exemplos\build\Chapter06.Signatures\e1fde85abc0d48b798babfd4bb66eee5.absent". O sistema não pode encontrar o arquivo especificado

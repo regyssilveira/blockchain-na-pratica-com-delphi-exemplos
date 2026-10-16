@@ -1,0 +1,1 @@
+EArgumentException: Uso: Chapter06.Signatures arquivo-original arquivo-alterado

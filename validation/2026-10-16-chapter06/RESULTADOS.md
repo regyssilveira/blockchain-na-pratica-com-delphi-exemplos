@@ -19,3 +19,7 @@ A e B são fixtures/p02/document-a.txt e document-b.txt; chave principal públic
 Evidências: results.xml/summary.json (suíte), acceptance.json/experiment.txt (console), stderr dos casos negativos e hashes das fontes normalizados para LF. O roteiro do leitor está em chapters/chapter06/README.md. A adição de um switch ao helper de compilação foi exercitada na seleção Protocol e no novo console; os demais percursos não foram reexecutados nesta etapa de redação.
 
 Conferências adicionais: execução do console com caminhos de entrada contendo espaços preservou os cinco resultados; duas entradas idênticas produziram True nos casos que dependiam de alteração e False para a chave diferente. Saídas em paths-with-spaces.txt e identical-inputs.txt.
+
+## Revisão do capítulo
+
+A versão chapter06-examples-r1-2026-10-16 corrige somente o comentário sobre a preparação do digest. A reexecução de 76 testes e dos cinco casos está em [review-01/REVIEW.md](review-01/REVIEW.md); instruções criptográficas inalteradas. As evidências anteriores permanecem vinculadas à primeira versão.

@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<test-results name="D:\Livros\blockchain-na-pratica-com-delphi-exemplos\build\Protocol\Protocol.Tests.exe" total="76" errors="0" failures="0" ignored="0" inconclusive="0" not-run="0" skipped="0" invalid="0" date="2026-10-16" time="19:25:08">
+  <culture-info current-culture="en" current-uiculture="en" />
+  <test-suite type="Assembly" name="Protocol.Tests.exe" executed="true" result="Success" success="True" time="0.036" asserts="0">
+    <results>
+        <test-suite type="Namespace" name="Blockchain" executed="true" result="Success" success="True" time="0.036" asserts="0" >
+          <results>
+              <test-suite type="Fixture" name="TEthereumTests" executed="True" result="Success" success="True" time="0.033" >
+                <results>
+                  <test-case name="KeccakMatchesReference.Empty" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="KeccakMatchesReference.Abc" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="KeccakMatchesReference.ZeroByte" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="KeccakMatchesReference.HighBytes" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="KeccakIsNotSha3" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="RlpMatchesReference.EmptyBytes" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="RlpMatchesReference.ZeroByte" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="RlpMatchesReference.SingleByte" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="RlpMatchesReference.HighByte" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="RlpMatchesReference.Dog" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="RlpMatchesReference.EmptyList" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="RlpMatchesReference.CatDog" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="RlpMatchesReference.Nested" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="RlpMatchesReference.Bytes55" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="RlpMatchesReference.Bytes56" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="RlpMatchesReference.List55" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="RlpMatchesReference.List56" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="RlpIntegerZeroIsNotZeroByte" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="AbiMatchesReference.OfficialBaz" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="AbiMatchesReference.RecordHash" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="AbiMatchesReference.Lookup" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="AbiStrictPaddingAndSizes" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="HexAndSelectorRejectMalformedInput" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="Eip155PublishedDigestSignature" executed="True" result="Success" success="True" time="0.024" asserts="0" />
+                  <test-case name="Type2MatchesIndependentReference.Transfer" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="Type2MatchesIndependentReference.RecordCall" executed="True" result="Success" success="True" time="0.001" asserts="0" />
+                  <test-case name="Type2MatchesIndependentReference.Creation" executed="True" result="Success" success="True" time="0.001" asserts="0" />
+                  <test-case name="SigningIsDeterministicAndTamperingFails" executed="True" result="Success" success="True" time="0.002" asserts="0" />
+                  <test-case name="LowSNormalizationUsesLibrarySignature" executed="True" result="Success" success="True" time="0.003" asserts="0" />
+                  <test-case name="InvalidKeysDigestsAndSignatures" executed="True" result="Success" success="True" time="0.002" asserts="0" />
+                  <test-case name="Type2RejectsInvalidDestinationAndFees" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="Type2ChainAndFieldsChangeSigningHash" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                </results>
+              </test-suite>
+              <test-suite type="Fixture" name="TPrimitivesTests" executed="True" result="Success" success="True" time="0.003" >
+                <results>
+                  <test-case name="HashMatchesIndependentReference.DocumentA" executed="True" result="Success" success="True" time="0.001" asserts="0" />
+                  <test-case name="HashMatchesIndependentReference.DocumentCopy" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="HashMatchesIndependentReference.DocumentChanged" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="HashMatchesIndependentReference.Empty" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="HashMatchesIndependentReference.Utf8" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="HashMatchesIndependentReference.Binary" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="HashMatchesIndependentReference.Abc" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="HashMatchesIndependentReference.Padding55" executed="True" result="Success" success="True" time="0.001" asserts="0" />
+                  <test-case name="HashMatchesIndependentReference.Padding56" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="HashMatchesIndependentReference.Padding63" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="HashMatchesIndependentReference.Padding64" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="HashMatchesIndependentReference.Padding65" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="HashMatchesIndependentReference.MultipleBlocks" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="CopiedContentAndChangedByte" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="Utf8UsesExplicitBytes" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="NoUnicodeOrLineEndingNormalization" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="FileDoesNotExist" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="HashHexRetainsLeadingZerosAndHighBit" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="InvalidDocumentHash.Short" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="InvalidDocumentHash.Long" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="InvalidDocumentHash.BadCharacter" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="InvalidDocumentHash.Prefix" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="IntegerRepresentationsMatchKnownValues.Zero" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="IntegerRepresentationsMatchKnownValues.One" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="IntegerRepresentationsMatchKnownValues.HighByte" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="IntegerRepresentationsMatchKnownValues.ByteOrder" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="IntegerRepresentationsMatchKnownValues.AboveDouble" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="IntegerRepresentationsMatchKnownValues.AboveUInt64" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="IntegerRepresentationsMatchKnownValues.Maximum" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="InvalidDecimal.Empty" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="InvalidDecimal.Negative" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="InvalidDecimal.Sign" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="InvalidDecimal.Fraction" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="InvalidDecimal.Exponent" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="InvalidDecimal.LeadingZero" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="InvalidDecimal.Whitespace" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="InvalidQuantity.NoDigits" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="InvalidQuantity.NoPrefix" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="InvalidQuantity.LeadingZero" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="InvalidQuantity.BadHex" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="InvalidQuantity.ZeroPadded" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="OverflowIsRejected" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="FixedBytesRequireExactLength" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="JsonPreservesQuantityAsString" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                </results>
+              </test-suite>
+          </results>
+        </test-suite>
+    </results>
+  </test-suite>
+</test-results>
