@@ -73,6 +73,12 @@ A etapa P03 acrescenta `src/Blockchain.Ethereum.pas`: palavras ABI estáticas, R
 
 O comando prepara as mesmas dependências e compila um executável Delphi nativo. Não requer carteira, rede Ethereum, Node.js ou Python. Consulte [resultados e limites P03](validation/2026-10-16-p03/RESULTADOS.md) e a [procedência dos vetores](fixtures/p03/PROVENIENCIA.md). Os dados de chave do exemplo são deliberadamente públicos e exclusivos do teste.
 
+## P04: transação Delphi aceita pelo Anvil local
+
+Execute `.\scripts\Test-Anvil.ps1 -DelphiRoot 'C:\Program Files (x86)\Embarcadero\Studio\37.0'`. O roteiro prepara o Anvil 1.8.5 com checksum fixado, inicia uma rede nova somente local, compila e executa 77 testes e encerra o nó. Assinatura, codificação e envio são feitos em Delphi nativo. Há 76 regressões e um cenário de integração com transferência, recibo, saldos exatos e três rejeições esperadas.
+
+Veja [reprodução, critérios e limites do P04](validation/2026-10-16-p04/RESULTADOS.md). O contrato de registro permanece pendente. Binários e dependências não são distribuídos; o primeiro preparo precisa de internet, e o Delphi 13 requer instalação/licença própria.
+
 ## Licença do material
 
 O código original e os scripts deste repositório usam Apache License 2.0, em `LICENSE`. As dependências mantêm suas próprias licenças e avisos, descritos em `THIRD_PARTY_NOTICES.md`. Elas são baixadas de suas origens e não são incorporadas ao histórico deste repositório.

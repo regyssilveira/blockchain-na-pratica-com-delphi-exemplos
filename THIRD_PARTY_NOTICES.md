@@ -13,3 +13,7 @@ As revisões exatas estão em `dependencies.lock.json`. Preservar os arquivos de
 Não são redistribuídos fontes ou bibliotecas proprietárias do Delphi. A licença Apache dos exemplos não altera os termos dos componentes de terceiros. O contrato e o cliente blockchain ainda não foram escritos.
 
 Os vetores de P03 foram produzidos na autoria com ethers 6.15.0 (MIT, Richard Moore), obtido do pacote oficial e com integridade conferida. O pacote e seu runtime não são redistribuídos nem usados pelo executável Delphi. Dados gerados e referências normativas estão documentados em fixtures/p03/PROVENIENCIA.md.
+
+## Anvil / Foundry 1.8.5 — ferramenta externa de desenvolvimento
+
+Código principal: MIT OU Apache-2.0, projeto foundry-rs/foundry, commit 51a52c59cffd940f76eddd0b4bb1791aa4b5ac7f. O leitor baixa o pacote oficial por Prepare-Anvil.ps1; não há binários Foundry versionados ou redistribuídos aqui. Dependências transitivas do pacote mantêm seus próprios termos. A utilização local validada não declara auditoria integral dessas licenças. Veja a release oficial e o inventário de ambiente do livro.
