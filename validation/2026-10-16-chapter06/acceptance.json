@@ -1,0 +1,59 @@
+﻿{
+    "passed":  true,
+    "compiler":  "37.0.57242.3601",
+    "target":  "Win64",
+    "unitTests":  76,
+    "failures":  0,
+    "errors":  0,
+    "ignored":  0,
+    "signatureCases":  5,
+    "expectedProcessErrors":  2,
+    "externalNodeRequired":  false,
+    "output":  [
+                   {
+                       "value":  "original=True",
+                       "PSPath":  "D:\\Livros\\blockchain-na-pratica-com-delphi-exemplos\\build\\Chapter06.Signatures\\experiment.txt",
+                       "PSParentPath":  "D:\\Livros\\blockchain-na-pratica-com-delphi-exemplos\\build\\Chapter06.Signatures",
+                       "PSChildName":  "experiment.txt",
+                       "PSDrive":  "D",
+                       "PSProvider":  "Microsoft.PowerShell.Core\\FileSystem",
+                       "ReadCount":  1
+                   },
+                   {
+                       "value":  "mensagem_alterada=False",
+                       "PSPath":  "D:\\Livros\\blockchain-na-pratica-com-delphi-exemplos\\build\\Chapter06.Signatures\\experiment.txt",
+                       "PSParentPath":  "D:\\Livros\\blockchain-na-pratica-com-delphi-exemplos\\build\\Chapter06.Signatures",
+                       "PSChildName":  "experiment.txt",
+                       "PSDrive":  "D",
+                       "PSProvider":  "Microsoft.PowerShell.Core\\FileSystem",
+                       "ReadCount":  2
+                   },
+                   {
+                       "value":  "outra_chave=False",
+                       "PSPath":  "D:\\Livros\\blockchain-na-pratica-com-delphi-exemplos\\build\\Chapter06.Signatures\\experiment.txt",
+                       "PSParentPath":  "D:\\Livros\\blockchain-na-pratica-com-delphi-exemplos\\build\\Chapter06.Signatures",
+                       "PSChildName":  "experiment.txt",
+                       "PSDrive":  "D",
+                       "PSProvider":  "Microsoft.PowerShell.Core\\FileSystem",
+                       "ReadCount":  3
+                   },
+                   {
+                       "value":  "assinatura_de_outra_mensagem=False",
+                       "PSPath":  "D:\\Livros\\blockchain-na-pratica-com-delphi-exemplos\\build\\Chapter06.Signatures\\experiment.txt",
+                       "PSParentPath":  "D:\\Livros\\blockchain-na-pratica-com-delphi-exemplos\\build\\Chapter06.Signatures",
+                       "PSChildName":  "experiment.txt",
+                       "PSDrive":  "D",
+                       "PSProvider":  "Microsoft.PowerShell.Core\\FileSystem",
+                       "ReadCount":  4
+                   },
+                   {
+                       "value":  "alterada_assinada_novamente=True",
+                       "PSPath":  "D:\\Livros\\blockchain-na-pratica-com-delphi-exemplos\\build\\Chapter06.Signatures\\experiment.txt",
+                       "PSParentPath":  "D:\\Livros\\blockchain-na-pratica-com-delphi-exemplos\\build\\Chapter06.Signatures",
+                       "PSChildName":  "experiment.txt",
+                       "PSDrive":  "D",
+                       "PSProvider":  "Microsoft.PowerShell.Core\\FileSystem",
+                       "ReadCount":  5
+                   }
+               ]
+}

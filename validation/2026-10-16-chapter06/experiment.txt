@@ -1,0 +1,5 @@
+original=True
+mensagem_alterada=False
+outra_chave=False
+assinatura_de_outra_mensagem=False
+alterada_assinada_novamente=True

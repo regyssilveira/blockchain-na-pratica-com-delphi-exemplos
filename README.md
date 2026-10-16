@@ -14,6 +14,16 @@ A Parte 3 também possui implementação e validação próprias: blocos, assina
 
 São 114 testes (incluindo os 76 offline anteriores), 14 cenários com processos reais e verificação de encerramento dos filhos do supervisor. Consulte o [percurso dos capítulos 8–13](chapters/part03/README.md), com comandos manuais e limites, e os [resultados](validation/2026-10-16-didactic/RESULTADOS.md). O roteiro de integração abaixo permanece separado.
 
+## Assinaturas do capítulo 6
+
+O [exemplo de arquivos assinados](chapters/chapter06/README.md) usa as funções Delphi já validadas para observar assinatura correta, mensagem alterada, chave diferente, assinatura trocada e nova assinatura. Versão `chapter06-examples-2026-10-16`.
+
+```powershell
+.\scripts\Test-Chapter06.ps1 -DelphiRoot 'C:\Program Files (x86)\Embarcadero\Studio\37.0'
+```
+
+São 76 testes offline existentes e cinco experimentos nativos, sem iniciar nó. As chaves são conhecidas e exclusivas do laboratório. Consulte os [resultados executados](validation/2026-10-16-chapter06/RESULTADOS.md).
+
 ## Requisitos
 
 - Windows x86-64 e Delphi 13 com compilador Win64, bibliotecas padrão e DUnit. Referência observada: build 37.0.57242.3601. O leitor deve ter uma licença Delphi adequada à sua utilização.
