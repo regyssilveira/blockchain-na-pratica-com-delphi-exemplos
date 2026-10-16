@@ -53,6 +53,16 @@ Para repetir a verificação de regressão, incluindo uma mutação temporária 
 
 O script restaura o logger em `finally`, recompila e repete a suíte correta. A falha durante a mutação é esperada; o comando só aprova se os quatro casos a detectarem e a execução restaurada passar. Não muda as configurações regionais do Windows nem precisa de conexão com uma rede blockchain.
 
-## Licença
+## Hashes, bytes e precisão numérica
+
+A etapa P02 contém os primeiros componentes do protótipo em `src/Blockchain.Primitives.pas` e 44 casos de teste nativos em `tests/`. Eles verificam os bytes dos arquivos, SHA-256 contra referências independentes e representação exata de valores até 2^256−1, sem ponto flutuante monetário. As entradas e suas referências estão em `fixtures/p02/`.
+
+```powershell
+.\scripts\Test-Primitives.ps1 -DelphiRoot 'C:\Program Files (x86)\Embarcadero\Studio\37.0'
+```
+
+O leitor pode executar somente esse comando após clonar o repositório e preparar o Delphi; as dependências são obtidas ou conferidas pelo script. Todos os cálculos e asserções ocorrem no executável Delphi local. Não são necessários Anvil, solc ou conta de blockchain nesta etapa. Consulte [resultados e limites de P02](validation/2026-10-16-p02/RESULTADOS.md). A aprovação numérica não significa que assinatura e transações já estejam validadas.
+
+## Licença dos exemplos
 
 O código original e os scripts deste repositório usam Apache License 2.0, em `LICENSE`. As dependências mantêm suas próprias licenças e avisos, descritos em `THIRD_PARTY_NOTICES.md`. Elas são baixadas de suas origens e não são incorporadas ao histórico deste repositório.
