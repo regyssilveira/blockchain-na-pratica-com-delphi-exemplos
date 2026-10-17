@@ -16,8 +16,8 @@ $output = Join-Path $root ('build\Chapter18\' + [guid]::NewGuid().ToString('N'))
 New-Item -ItemType Directory -Path $output -Force | Out-Null
 $listener = [Net.Sockets.TcpListener]::new([Net.IPAddress]::Loopback, $Port)
 try { $listener.Start() } finally { $listener.Stop() }
-function Invoke-Native([string]$Executable, [string[]]$Arguments, [string]$Name) {
-    $process = Start-Process -FilePath $Executable -ArgumentList @($Arguments | ForEach-Object { '"' + $_ + '"' }) -WorkingDirectory $root -WindowStyle Hidden -PassThru -RedirectStandardOutput (Join-Path $output "$Name.log") -RedirectStandardError (Join-Path $output "$Name.stderr.log")
+function Invoke-Native([string]$Executable, [string[]]$Arguments, [string]$Name, [string]$WorkingDirectory=$root) {
+    $process = Start-Process -FilePath $Executable -ArgumentList @($Arguments | ForEach-Object { '"' + $_ + '"' }) -WorkingDirectory $WorkingDirectory -WindowStyle Hidden -PassThru -RedirectStandardOutput (Join-Path $output "$Name.log") -RedirectStandardError (Join-Path $output "$Name.stderr.log")
     $null = $process.Handle
     try {
         if (-not $process.WaitForExit(30000)) { throw "Prazo excedido: $Name" }
@@ -42,7 +42,7 @@ try {
     $acceptance = Join-Path $root 'build\Chapter18.Acceptance\Chapter18.Acceptance.exe'
     Invoke-Native $acceptance @("$Port",$output) 'workflow'
     $summary = Get-Content -LiteralPath (Join-Path $output 'acceptance.json') -Raw | ConvertFrom-Json
-    Invoke-Native (Join-Path $root 'build\Chapter18.Desktop\Chapter18.Desktop.exe') @("$Port",$output,$summary.pendingDeploymentPath) 'ui'
+    Invoke-Native (Join-Path $root 'build\Chapter18.Desktop\Chapter18.Desktop.exe') @("$Port",$output,$summary.pendingDeploymentPath) 'ui' $output
     $ui = Get-Content -LiteralPath (Join-Path $output 'ui-acceptance.json') -Raw | ConvertFrom-Json
     if (-not $ui.passed) { throw 'Autoteste VCL nao aprovou.' }
     Invoke-Native $acceptance @("$Port",$output,'check-ui') 'resume'

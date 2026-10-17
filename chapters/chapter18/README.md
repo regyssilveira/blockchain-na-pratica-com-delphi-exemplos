@@ -1,6 +1,6 @@
 # Aplicação VCL de registro e verificação
 
-Referência técnica: tag `chapter18-examples-2026-10-16`. Código original Apache License 2.0. Requer Windows x86-64 e Delphi 13 Win64 instalado e licenciado, Git e Windows PowerShell 5.1 (ou PowerShell 7). O primeiro preparo baixa dependências e ferramentas fixadas; não exige Node.js, Python, Docker, carteira ou provedor externo. Nenhum executável Delphi ou de terceiros é distribuído.
+Referência técnica: tag `chapter18-examples-2026-10-17-r1`. Código original Apache License 2.0. Requer Windows x86-64 e Delphi 13 Win64 instalado e licenciado, Git e Windows PowerShell 5.1 (ou PowerShell 7). O primeiro preparo baixa dependências e ferramentas fixadas; não exige Node.js, Python, Docker, carteira ou provedor externo. Nenhum executável Delphi ou de terceiros é distribuído.
 
 ## Validar localmente
 
@@ -50,3 +50,7 @@ Os estados preservados distinguem preparado, enviado, pendente, desconhecido, re
 A interface usa exclusivamente chainId 31337, loopback e a chave publicada de byte 46 repetido 32 vezes. Não recebe chaves reais, não implementa cofre, rede pública, tarifas dinâmicas, coordenação entre vários processos escritores ou reorganizações. Cada operação deve ter acompanhamento próprio. Arquivo de acompanhamento não é autenticado contra substituição integral. O caminho selecionado é lido na hora do trabalho; o hash identifica os bytes lidos, sem bloquear alterações externas do arquivo. Não use este laboratório para valores ou documentos sigilosos reais.
 
 O botão **Implantar contrato** é parte do preparo local, não uma implantação em produção. Reiniciar o Anvil vazio exige nova implantação e novos arquivos; abrir um acompanhamento antigo não restaura a rede. Ao terminar, encerre a instância que você abriu.
+
+## Correções da revisão r1
+
+O formulário sem DFM declara ShowInTaskBar para aparecer como janela independente. O caminho do contrato é resolvido em relação ao executável em build/Chapter18.Desktop, e os quatro diálogos preservam o diretório corrente com ofNoChangeDir. Mantenha a estrutura build/contract ao executar; mover somente o executável não constitui distribuição preparada. O autoteste também inicia a VCL em outra pasta e confere a janela sem proprietária com WS_EX_APPWINDOW e a disponibilidade do artefato.

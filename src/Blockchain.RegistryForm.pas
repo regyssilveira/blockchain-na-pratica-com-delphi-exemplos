@@ -17,6 +17,7 @@ type
     FTimer: TTimer;
     FWorker: TRegistryWorker;
     FPort: Word;
+    FArtifactPath: string;
     FBusyTicks, FCloseAttempts: Integer;
     FSelfTestDirectory: string;
     FSelfTestStarted: Boolean;
@@ -64,6 +65,8 @@ constructor TRegistryForm.Create(AOwner: TComponent);
 var Panel: TPanel;
 begin
   inherited CreateNew(AOwner);
+  // CreateNew não transfere a marcação de formulário principal de TApplication.
+  ShowInTaskBar := True;
   Caption := 'Registro de documentos — Delphi nativo / Anvil local';
   Width := 1040;
   Height := 690;
@@ -166,6 +169,8 @@ procedure TRegistryForm.Configure(const APort: Word; const ATestDirectory,
 begin
   if APort = 0 then raise EArgumentException.Create('Porta inválida.');
   FPort := APort;
+  FArtifactPath := TPath.GetFullPath(TPath.Combine(ExtractFilePath(ParamStr(0)),
+    '..\contract\DocumentRegistry.json'));
   FSelfTestDirectory := ATestDirectory;
   FDeployment.Text := ATestDeployment;
   if ATestDirectory <> '' then
@@ -182,7 +187,7 @@ var Dialog: TOpenDialog;
 begin
   Dialog := TOpenDialog.Create(Self);
   try
-    Dialog.Options := [ofFileMustExist, ofPathMustExist, ofEnableSizing];
+    Dialog.Options := [ofFileMustExist, ofPathMustExist, ofEnableSizing, ofNoChangeDir];
     Dialog.Title := 'Selecione uma cópia de teste; o arquivo permanece local';
     if Dialog.Execute then FDocument.Text := Dialog.FileName;
   finally Dialog.Free; end;
@@ -194,7 +199,7 @@ begin
   Dialog := TOpenDialog.Create(Self);
   try
     Dialog.Filter := 'Acompanhamento JSON|*.json';
-    Dialog.Options := [ofFileMustExist, ofPathMustExist, ofEnableSizing];
+    Dialog.Options := [ofFileMustExist, ofPathMustExist, ofEnableSizing, ofNoChangeDir];
     if Dialog.Execute then FDeployment.Text := Dialog.FileName;
   finally Dialog.Free; end;
 end;
@@ -205,7 +210,7 @@ begin
   Dialog := TOpenDialog.Create(Self);
   try
     Dialog.Filter := 'Acompanhamento JSON|*.json';
-    Dialog.Options := [ofFileMustExist, ofPathMustExist, ofEnableSizing];
+    Dialog.Options := [ofFileMustExist, ofPathMustExist, ofEnableSizing, ofNoChangeDir];
     if Dialog.Execute then FCheckpoint.Text := Dialog.FileName;
   finally Dialog.Free; end;
 end;
@@ -221,7 +226,7 @@ begin
       Dialog.Filter := 'Novo acompanhamento JSON|*.json';
       Dialog.DefaultExt := 'json';
       Dialog.Title := 'Escolha um arquivo novo para esta operação';
-      Dialog.Options := [ofPathMustExist, ofEnableSizing];
+      Dialog.Options := [ofPathMustExist, ofEnableSizing, ofNoChangeDir];
       if not Dialog.Execute then Exit;
       if FileExists(Dialog.FileName) then
       begin
@@ -242,7 +247,7 @@ begin
   Request := Default(TRegistryRequest);
   Request.Action := AAction;
   Request.Port := FPort;
-  Request.ArtifactPath := TPath.GetFullPath('build\contract\DocumentRegistry.json');
+  Request.ArtifactPath := FArtifactPath;
   Request.DocumentPath := FDocument.Text;
   Request.DeploymentPath := FDeployment.Text;
   Request.CheckpointPath := FCheckpoint.Text;
@@ -318,15 +323,21 @@ begin
 end;
 
 procedure TRegistryForm.FinishSelfTest(const AResult: TRegistryResult);
-var Document: TJSONObject; Passed: Boolean;
+var Document: TJSONObject; Passed, TaskbarWindow, ArtifactAvailable: Boolean;
 begin
+  TaskbarWindow := (GetWindowLong(Handle, GWL_EXSTYLE) and WS_EX_APPWINDOW <> 0) and
+    (GetWindow(Handle, GW_OWNER) = 0);
+  ArtifactAvailable := FileExists(FArtifactPath);
   Passed := (AResult.ErrorText = '') and (AResult.State = 'pending') and
     (AResult.TransactionHash = FExpectedHash) and (FBusyTicks >= 20) and
     (FCloseAttempts > 0) and not Assigned(FWorker) and
-    FControlsDisabled and FUpdatedOnMainThread and (FDetails.Lines.Count > 5);
+    FControlsDisabled and FUpdatedOnMainThread and (FDetails.Lines.Count > 5) and
+    TaskbarWindow and ArtifactAvailable;
   Document := TJSONObject.Create;
   try
     Document.AddPair('passed', TJSONBool.Create(Passed));
+    Document.AddPair('unownedTaskbarWindow', TJSONBool.Create(TaskbarWindow));
+    Document.AddPair('contractArtifactAvailable', TJSONBool.Create(ArtifactAvailable));
     Document.AddPair('busyTimerTicks', TJSONNumber.Create(FBusyTicks));
     Document.AddPair('closeAttemptsDeferred', TJSONNumber.Create(FCloseAttempts));
     Document.AddPair('state', AResult.State);
