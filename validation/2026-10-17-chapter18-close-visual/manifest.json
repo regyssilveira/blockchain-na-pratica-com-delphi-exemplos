@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-17",
+  "sourceRevision": "d11cfd1",
+  "sourceTag": "chapter18-examples-2026-10-17-r1",
+  "inputBytes": 3221225472,
+  "inputDescription": "Arquivo ficticio novo, preenchido com zeros pela extensao FileStream.SetLength",
+  "operation": "local SHA-256",
+  "networkRequired": false,
+  "applicationModifiedForTest": false,
+  "closeRequestedWhileBusy": true,
+  "closeWarningVisuallyObserved": true,
+  "windowRemainedOpen": true,
+  "busyCountersVisuallyObserved": [
+    102,
+    287
+  ],
+  "hashCompleteObservedAtSeconds": 32,
+  "exactRuntimeMeasured": false,
+  "resultState": "hashed",
+  "documentHash": "305b66a59d15b252092fbda9d09711230c429f351897cbd430e7b55a35fd3b97",
+  "buttonsEnabledAfterCompletion": true,
+  "normalCloseAfterCompletion": true,
+  "ownInputRemoved": true,
+  "numericDisplayScale": null,
+  "scope": "Protecao comum de QueryClose durante trabalhador de hash; acompanhamento de rede mantem a evidencia automatizada anterior."
+}
