@@ -133,3 +133,8 @@ O código original e os scripts deste repositório usam Apache License 2.0, em `
 ## Ambiente do capítulo 14
 
 A inspeção Delphi de rede, bloco e saldo está em [chapters/chapter14](chapters/chapter14/README.md), tag `chapter14-examples-2026-10-16`. O roteiro `scripts/Test-Chapter14.ps1` inicia um Anvil novo, faz consultas e encerra sua própria instância; não exige contrato ou solc.
+
+
+## Aplicação do capítulo 18
+
+Aplicação VCL Delphi nativa com hash local, registro, verificação, acompanhamento persistido e trabalhador separado da interface. Veja o [roteiro local e os limites](chapters/chapter18/README.md). Execute `scripts/Test-Chapter18.ps1` para conferir o fluxo e a retomada; apenas nó Anvil e compilação Solidity são externos.

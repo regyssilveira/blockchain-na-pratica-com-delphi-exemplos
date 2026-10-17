@@ -1,0 +1,91 @@
+﻿{
+    "passed":  true,
+    "port":  19346,
+    "runDirectory":  "D:\\Livros\\blockchain-na-pratica-com-delphi-exemplos\\build\\Anvil\\prototype-runs\\9e311b7d02fd4c869137befa8138694c",
+    "registrationCheckpoint":  "D:\\Livros\\blockchain-na-pratica-com-delphi-exemplos\\build\\Anvil\\prototype-runs\\9e311b7d02fd4c869137befa8138694c\\registration.json",
+    "hash":  "0x6d7b83e5fc73149a949a5842eb3ec197307f8b5ea218add887324dffa921be6a",
+    "state":  "succeeded",
+    "blockNumber":  "5",
+    "resumedNonce":  "0x5",
+    "queryNonce":  "0x5",
+    "operations":  [
+                       {
+                           "name":  "01-deploy",
+                           "processId":  36004,
+                           "exitCode":  0,
+                           "elapsedMs":  491
+                       },
+                       {
+                           "name":  "02-deployment-pending",
+                           "processId":  46548,
+                           "exitCode":  2,
+                           "elapsedMs":  186
+                       },
+                       {
+                           "name":  "03-mine-deployment",
+                           "processId":  55864,
+                           "exitCode":  0,
+                           "elapsedMs":  102
+                       },
+                       {
+                           "name":  "04-confirm-deployment",
+                           "processId":  37544,
+                           "exitCode":  0,
+                           "elapsedMs":  93
+                       },
+                       {
+                           "name":  "05-register",
+                           "processId":  37548,
+                           "exitCode":  0,
+                           "elapsedMs":  126
+                       },
+                       {
+                           "name":  "06-registration-pending",
+                           "processId":  34076,
+                           "exitCode":  2,
+                           "elapsedMs":  1092
+                       },
+                       {
+                           "name":  "07-query-before-mining",
+                           "processId":  48468,
+                           "exitCode":  4,
+                           "elapsedMs":  90
+                       },
+                       {
+                           "name":  "08-mine-registration",
+                           "processId":  24868,
+                           "exitCode":  0,
+                           "elapsedMs":  101
+                       },
+                       {
+                           "name":  "09-resume-original-hash",
+                           "processId":  25796,
+                           "exitCode":  0,
+                           "elapsedMs":  93
+                       },
+                       {
+                           "name":  "10-query-restarted-client",
+                           "processId":  61708,
+                           "exitCode":  0,
+                           "elapsedMs":  126
+                       },
+                       {
+                           "name":  "11-query-another-process",
+                           "processId":  40480,
+                           "exitCode":  0,
+                           "elapsedMs":  94
+                       },
+                       {
+                           "name":  "12-verify-copy",
+                           "processId":  48380,
+                           "exitCode":  0,
+                           "elapsedMs":  89
+                       },
+                       {
+                           "name":  "13-verify-changed",
+                           "processId":  63144,
+                           "exitCode":  4,
+                           "elapsedMs":  86
+                       }
+                   ]
+}

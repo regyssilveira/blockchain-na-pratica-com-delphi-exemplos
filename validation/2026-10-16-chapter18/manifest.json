@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "referenceTag": "chapter18-examples-2026-10-16",
+  "compiler": "37.0.57242.3601",
+  "target": "Win64",
+  "shell": "Windows PowerShell 5.1",
+  "port": 19345,
+  "prototypeRegressionTests": 108,
+  "workflowChecks": 28,
+  "resumeChecks": 3,
+  "stoppedChecks": 4,
+  "uiTimerTicks": 48,
+  "closeDeferred": 1,
+  "visualReviewPerformed": false,
+  "readerTrialPerformed": false,
+  "sourceSHA256LF": {
+    "src/Blockchain.RegistryWorkflow.pas": "2622be1874079e255020cf8fad2d349b868c6603448004f1a4f9ab8651b2c82f",
+    "src/Blockchain.RegistryForm.pas": "056a74b6134c44e97ecd366054c46f7e90d887b95263cdde743db031e607a15e",
+    "demos/Chapter18.Desktop.dpr": "b319d25587db9317e00194125f8f1e7289864b06d6b8afb46590d9ca78fb54f6",
+    "demos/Chapter18.Acceptance.dpr": "997c35582ecdf2a6cb2bfbaa873d115fd863ed13953bb9a130cd529ac0716895",
+    "scripts/Test-Primitives.ps1": "56fc75f3e5c8268abbd453c2f035f9ef50fe01fa2cb7c21f37882fd6d54e2ee1",
+    "scripts/Test-Chapter18.ps1": "c53cbfe1732a34b328fa1f68f6af153b2f13b4d96896a1a9dc3898205c4e4865"
+  }
+}

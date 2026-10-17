@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "checks": [
+    "ui_tracking_no_additional_send",
+    "reopened_tracking_keeps_hash",
+    "reopened_tracking_still_pending"
+  ]
+}

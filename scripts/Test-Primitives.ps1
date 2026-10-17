@@ -1,5 +1,5 @@
 [CmdletBinding()]
-param([Parameter(Mandatory = $true)][string]$DelphiRoot, [switch]$Protocol, [switch]$Anvil, [switch]$BuildDemo, [switch]$BuildCli, [switch]$Didactic, [switch]$BuildDidacticNode, [switch]$BuildDidacticCli, [switch]$BuildDidacticScenario, [switch]$BuildSignaturesDemo, [switch]$BuildTransactionsDemo, [switch]$BuildEnvironmentDemo)
+param([Parameter(Mandatory = $true)][string]$DelphiRoot, [switch]$Protocol, [switch]$Anvil, [switch]$BuildDemo, [switch]$BuildCli, [switch]$Didactic, [switch]$BuildDidacticNode, [switch]$BuildDidacticCli, [switch]$BuildDidacticScenario, [switch]$BuildSignaturesDemo, [switch]$BuildTransactionsDemo, [switch]$BuildEnvironmentDemo, [switch]$BuildRegistryDesktop, [switch]$BuildRegistryAcceptance)
 $ErrorActionPreference = 'Stop'
 $projectRoot = Split-Path $PSScriptRoot -Parent
 $compiler = Join-Path $DelphiRoot 'bin\dcc64.exe'
@@ -7,8 +7,8 @@ if (-not (Test-Path -LiteralPath $compiler)) { throw 'Compilador Win64 ausente.'
 $version = (Get-Item -LiteralPath $compiler).VersionInfo.FileVersion
 if ($version -notlike '37.*') { throw 'Exigido Delphi 13.' }
 & (Join-Path $PSScriptRoot 'Prepare-Dependencies.ps1')
-$buildProgram = $BuildEnvironmentDemo -or $BuildTransactionsDemo -or $BuildSignaturesDemo -or $BuildDemo -or $BuildCli -or $BuildDidacticNode -or $BuildDidacticCli -or $BuildDidacticScenario
-$projectName = if ($BuildEnvironmentDemo) { 'Chapter14.Environment' } elseif ($BuildTransactionsDemo) { 'Chapter07.Transactions' } elseif ($BuildSignaturesDemo) { 'Chapter06.Signatures' } elseif ($BuildDidacticScenario) { 'Didactic.Scenario' } elseif ($BuildDidacticNode) { 'Didactic.Node' } elseif ($BuildDidacticCli) { 'Didactic.Cli' } elseif ($Didactic) { 'Didactic' } elseif ($BuildCli) { 'DocumentRegistry.Cli' } elseif ($BuildDemo) { 'DocumentRegistry.Demo' } elseif ($Anvil) { 'Anvil' } elseif ($Protocol) { 'Protocol' } else { 'Primitives' }
+$buildProgram = $BuildRegistryDesktop -or $BuildRegistryAcceptance -or $BuildEnvironmentDemo -or $BuildTransactionsDemo -or $BuildSignaturesDemo -or $BuildDemo -or $BuildCli -or $BuildDidacticNode -or $BuildDidacticCli -or $BuildDidacticScenario
+$projectName = if ($BuildRegistryDesktop) { 'Chapter18.Desktop' } elseif ($BuildRegistryAcceptance) { 'Chapter18.Acceptance' } elseif ($BuildEnvironmentDemo) { 'Chapter14.Environment' } elseif ($BuildTransactionsDemo) { 'Chapter07.Transactions' } elseif ($BuildSignaturesDemo) { 'Chapter06.Signatures' } elseif ($BuildDidacticScenario) { 'Didactic.Scenario' } elseif ($BuildDidacticNode) { 'Didactic.Node' } elseif ($BuildDidacticCli) { 'Didactic.Cli' } elseif ($Didactic) { 'Didactic' } elseif ($BuildCli) { 'DocumentRegistry.Cli' } elseif ($BuildDemo) { 'DocumentRegistry.Demo' } elseif ($Anvil) { 'Anvil' } elseif ($Protocol) { 'Protocol' } else { 'Primitives' }
 $outputRoot = Join-Path $projectRoot "build\$projectName"
 $unitOutput = Join-Path $outputRoot 'dcu'
 New-Item -ItemType Directory -Path $unitOutput -Force | Out-Null
@@ -32,7 +32,8 @@ $includePath = @(
     (Join-Path $dependencyRoot 'SimpleBaseLib4Pascal\SimpleBaseLib\src\Include')
 ) -join ';'
 $unitPath = (@($relative) + @((Join-Path $DelphiRoot 'lib\win64\release'))) -join ';'
-$arguments = @('--no-config','-B','-Q','-CC','-DCI',
+$subsystem = if ($BuildRegistryDesktop) { '-CG' } else { '-CC' }
+$arguments = @('--no-config','-B','-Q',$subsystem,'-DCI',
     '-NSSystem;System.Win;Winapi;Vcl;Data;Xml',"-U$unitPath","-I$includePath",
     "-E$outputRoot","-NU$unitOutput",(Join-Path $workingDirectory $projectFile))
 if (($arguments -join ' ').Length -gt 30000) { throw 'Caminhos excedem o limite de comando Windows.' }
