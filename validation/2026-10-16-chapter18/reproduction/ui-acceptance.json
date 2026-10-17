@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "busyTimerTicks": 48,
+  "closeAttemptsDeferred": 1,
+  "state": "pending",
+  "sameTransactionHash": true,
+  "controlsDisabledWhileBusy": true,
+  "updatedOnMainThread": true,
+  "workerReleased": true,
+  "error": ""
+}

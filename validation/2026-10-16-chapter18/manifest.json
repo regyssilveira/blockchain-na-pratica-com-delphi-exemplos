@@ -20,5 +20,10 @@
     "demos/Chapter18.Acceptance.dpr": "997c35582ecdf2a6cb2bfbaa873d115fd863ed13953bb9a130cd529ac0716895",
     "scripts/Test-Primitives.ps1": "56fc75f3e5c8268abbd453c2f035f9ef50fe01fa2cb7c21f37882fd6d54e2ee1",
     "scripts/Test-Chapter18.ps1": "c53cbfe1732a34b328fa1f68f6af153b2f13b4d96896a1a9dc3898205c4e4865"
-  }
+  },
+  "cleanCheckoutReproduced": true,
+  "cleanCheckoutCommit": "67604bc",
+  "cleanCheckoutHasSpaces": true,
+  "cleanCheckoutPort": 19445,
+  "cleanCheckoutSourceHashesMatch": true
 }

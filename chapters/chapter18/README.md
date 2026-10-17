@@ -1,6 +1,6 @@
 # Aplicação VCL de registro e verificação
 
-Versão técnica candidata do capítulo 18. Código original Apache License 2.0. Requer Windows x86-64 e Delphi 13 Win64 instalado e licenciado, Git e Windows PowerShell 5.1 (ou PowerShell 7). O primeiro preparo baixa dependências e ferramentas fixadas; não exige Node.js, Python, Docker, carteira ou provedor externo. Nenhum executável Delphi ou de terceiros é distribuído.
+Referência técnica: tag `chapter18-examples-2026-10-16`. Código original Apache License 2.0. Requer Windows x86-64 e Delphi 13 Win64 instalado e licenciado, Git e Windows PowerShell 5.1 (ou PowerShell 7). O primeiro preparo baixa dependências e ferramentas fixadas; não exige Node.js, Python, Docker, carteira ou provedor externo. Nenhum executável Delphi ou de terceiros é distribuído.
 
 ## Validar localmente
 

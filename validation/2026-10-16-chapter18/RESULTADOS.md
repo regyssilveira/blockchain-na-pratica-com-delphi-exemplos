@@ -9,3 +9,6 @@ Arquivo idêntico/cópia com espaços encontrados; arquivo alterado ausente; con
 O orçamento do teste de nó parado é de oito segundos para observar a falha de transporte local antes do prazo global. Na investigação inicial, 300 ms esgotavam antes da recusa TCP; essa condição produz unknown por prazo, não rejeição de negócio. A exigência final de erro explícito do cliente, estado desconhecido e hash preservado foi mantida.
 
 Não há avaliação humana de usabilidade, conferência visual aprovada, teste de diálogos por leitor ou validação de rede pública. Capturas investigativas não produziram imagem válida e não são apresentadas como prova de interface. O autoteste atual cria a janela oculta e verifica seu ciclo de eventos e trabalho. A conferência visual/manual permanece pendente. Reproduza pelo roteiro em chapters/chapter18/README.md; nenhum binário ou segredo real é publicado.
+
+
+Reprodução independente aprovada: clone local sem hardlinks do commit 67604bc, pasta com espaços e novos downloads de dependências/ferramentas, portas 19445–19446. Roteiro completo repetiu 108 regressões, 28 condições, autoteste VCL, três de retomada e quatro de nó parado. Hashes de fontes iguais aos do manifesto; evidências em reproduction. O teste não equivale à avaliação visual/manual pendente.
