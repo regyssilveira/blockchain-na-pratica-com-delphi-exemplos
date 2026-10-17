@@ -31,7 +31,7 @@ if (-not $process.WaitForExit(15000)) {
 }
 $process.WaitForExit()
 if ($process.ExitCode -ne 0) { throw 'O exemplo inicial terminou com erro.' }
-$observed = @(Get-Content -LiteralPath (Join-Path $outputRoot 'output.txt'))
+$observed = @(Get-Content -LiteralPath (Join-Path $outputRoot 'output.txt') | ForEach-Object { $_.ToString() })
 $expected = @('ambiente_delphi=pronto', 'bits_do_ponteiro=64')
 if (($observed -join "`n") -cne ($expected -join "`n")) { throw 'Saida do exemplo inicial divergiu.' }
 [pscustomobject]@{passed=$true; compiler=$version; target='Win64'; exitCode=$process.ExitCode;

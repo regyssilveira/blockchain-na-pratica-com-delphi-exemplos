@@ -1,6 +1,6 @@
 # Capítulo 4 — primeiro programa Delphi
 
-Referência: `chapter04-examples-2026-10-16`. Código original sob Apache License 2.0.
+Referência: `chapter04-examples-r1-2026-10-16`. Código original sob Apache License 2.0.
 
 Requer Windows x86-64, Delphi 13 com compilador Win64 instalado/licenciado, Windows PowerShell 5.1 e Git. Nenhuma biblioteca de terceiros, nó de rede ou preparação de dependências é necessária para este exemplo.
 
