@@ -4,24 +4,8 @@
   "target": "Win64",
   "exitCode": 0,
   "output": [
-    {
-      "value": "ambiente_delphi=pronto",
-      "PSPath": "D:\\Livros\\blockchain-na-pratica-com-delphi-exemplos\\build\\repro chapter04 f038ad9f17da4ed0ad104f1bd506aa02\\build\\Chapter04.Start\\output.txt",
-      "PSParentPath": "D:\\Livros\\blockchain-na-pratica-com-delphi-exemplos\\build\\repro chapter04 f038ad9f17da4ed0ad104f1bd506aa02\\build\\Chapter04.Start",
-      "PSChildName": "output.txt",
-      "PSDrive": "D",
-      "PSProvider": "Microsoft.PowerShell.Core\\FileSystem",
-      "ReadCount": 1
-    },
-    {
-      "value": "bits_do_ponteiro=64",
-      "PSPath": "D:\\Livros\\blockchain-na-pratica-com-delphi-exemplos\\build\\repro chapter04 f038ad9f17da4ed0ad104f1bd506aa02\\build\\Chapter04.Start\\output.txt",
-      "PSParentPath": "D:\\Livros\\blockchain-na-pratica-com-delphi-exemplos\\build\\repro chapter04 f038ad9f17da4ed0ad104f1bd506aa02\\build\\Chapter04.Start",
-      "PSChildName": "output.txt",
-      "PSDrive": "D",
-      "PSProvider": "Microsoft.PowerShell.Core\\FileSystem",
-      "ReadCount": 2
-    }
+    "ambiente_delphi=pronto",
+    "bits_do_ponteiro=64"
   ],
   "thirdPartyDependenciesRequired": false,
   "externalNodeRequired": false,
@@ -29,9 +13,10 @@
   "pathWithSpaces": true,
   "dependenciesDirectoryPresent": false,
   "missingCompilerExit": 1,
-  "sourceCommit": "ae25edb8068a95460b265e6bd929c6d64d75736a",
+  "manualExit": 0,
+  "sourceCommit": "b0a79dbad0e2a5f6f5af2f4cbe1b8c00cd1078af",
   "sources": {
     "demos/Chapter04.Start.dpr": "a29702d105eab255470d2cc224b33f0c97a774157bf8791c28d28d4c7e0426a1",
-    "scripts/Test-Chapter04.ps1": "68d7465a1a7845fd1100207ae4d5fbe616f293ed891fb0cda5f40d18f37805de"
+    "scripts/Test-Chapter04.ps1": "d266b21cc06d659a2570873e684d56422cb31fb9c44503e951e276758ae7979a"
   }
 }
