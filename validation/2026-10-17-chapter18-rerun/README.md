@@ -1,0 +1,7 @@
+# Reexecução funcional do capítulo 18 — 17/10/2026
+
+Execução solicitada pelo autor. Anvil local próprio na porta 19345, chainId 31337, mineração sob comando; encerrado ao final e porta sem listener após a execução. Resultado: 28 condições do fluxo, três de retomada e quatro de nó encerrado aprovadas. Autoteste VCL oculto aprovado, com 49 eventos de timer e um fechamento adiado. Implantação, registro, verificação do original, ausência da cópia alterada, duplicidade revertida e acompanhamento sem novo envio constam nos JSON anexos.
+
+A primeira tentativa de Test-Chapter18.ps1 -SkipPrototype falhou ao recompilar o executável que o autor mantinha aberto (F2039). A janela do autor foi preservada. A compilação foi repetida com os mesmos argumentos, alterando somente -E e -NU para uma pasta build/Chapter18.Isolated com identificador único. O corpo do roteiro a partir de $output foi então executado, substituindo apenas o caminho do executável VCL pela cópia isolada. Não houve alteração em fontes ou scripts versionados. Compilação isolada e execução terminaram com código 0.
+
+As 108 regressões do protótipo não foram repetidas nesta execução incremental. O resultado não representa execução manual dos passos 1–7: o Computer Use continuou sem retornar a janela Delphi. O modo oculto não inspeciona aparência, cliques ou diálogos de arquivo. As confirmações manuais anteriores permanecem com seu alcance próprio; os casos visuais de rede e salvamento continuam pendentes.
