@@ -143,3 +143,8 @@ Aplicação VCL Delphi nativa com hash local, registro, verificação, acompanha
 ## Segurança e confiabilidade do capítulo 19
 
 [Exercícios locais](chapters/chapter19/README.md): proteção de chave conhecida pelo Windows, exportação de acompanhamento com campos permitidos e perda controlada de recibo no Anvil. Use `scripts/Test-Chapter19.ps1`; não introduza chaves reais nem interprete rollback de laboratório como validação de finalidade pública.
+
+
+## Proposta de aplicação do capítulo 20
+
+A [ficha local de avaliação](chapters/chapter20/README.md) ajuda a registrar problema, alternativa convencional, responsabilidades, hipóteses e critérios de decisão. É apoio documental; os programas permanecem na base validada do capítulo 19.
