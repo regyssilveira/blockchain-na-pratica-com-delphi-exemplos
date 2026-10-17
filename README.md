@@ -148,3 +148,7 @@ Aplicação VCL Delphi nativa com hash local, registro, verificação, acompanha
 ## Proposta de aplicação do capítulo 20
 
 A [ficha local de avaliação](chapters/chapter20/README.md) ajuda a registrar problema, alternativa convencional, responsabilidades, hipóteses e critérios de decisão. É apoio documental; os programas permanecem na base validada do capítulo 19.
+
+## Primeiro programa do capítulo 4
+
+O [console inicial](chapters/chapter04/README.md) compila e executa com a biblioteca padrão Delphi, sem dependências de terceiros ou nó. Referência `chapter04-examples-2026-10-16`; roteiro `scripts/Test-Chapter04.ps1`.
