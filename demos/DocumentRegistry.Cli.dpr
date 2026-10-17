@@ -98,7 +98,11 @@ begin
       Receipt := Registry.AwaitReceipt(Checkpoint.Hash, TimeoutMs, 1000);
       try
         Checkpoint := TTransactionCheckpoint.Load(CheckpointPath);
-        Output.AddPair('state', Checkpoint.State);
+        Output.AddPair('storedState', Checkpoint.State);
+        if not Assigned(Receipt) and
+          ((Checkpoint.State = 'succeeded') or (Checkpoint.State = 'reverted')) then
+          Output.AddPair('state', 'unknown')
+        else Output.AddPair('state', Checkpoint.State);
         Output.AddPair('hash', Checkpoint.Hash);
         if not Assigned(Receipt) then System.ExitCode := 2
         else

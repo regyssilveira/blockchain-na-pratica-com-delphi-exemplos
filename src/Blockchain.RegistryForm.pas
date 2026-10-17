@@ -299,7 +299,8 @@ begin
   FDetails.Lines.BeginUpdate;
   try
     FDetails.Clear;
-    FDetails.Lines.Add('Estado do acompanhamento: ' + AResult.State);
+    FDetails.Lines.Add('Estado apresentado: ' + AResult.State);
+    FDetails.Lines.Add('Estado preservado no arquivo: ' + AResult.StoredState);
     FDetails.Lines.Add('Hash da transação: ' + AResult.TransactionHash);
     FDetails.Lines.Add('SHA-256 do arquivo: ' + AResult.DocumentHash);
     FDetails.Lines.Add('Contrato: ' + AResult.ContractAddress);

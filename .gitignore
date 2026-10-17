@@ -13,3 +13,6 @@ __recovery/
 .env
 *.pfx
 *.key
+
+# Exercicio DPAPI: arquivos vinculados ao usuario, nunca redistribuir
+*.dpapi

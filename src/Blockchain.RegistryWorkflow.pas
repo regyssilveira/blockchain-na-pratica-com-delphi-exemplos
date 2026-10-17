@@ -20,6 +20,8 @@ type
 
   TRegistryResult = record
     State: string;
+    StoredState: string;
+    ReceiptObserved: Boolean;
     TransactionHash: string;
     DocumentHash: string;
     ContractAddress: string;
@@ -67,6 +69,7 @@ function Describe(const ACheckpoint: TTransactionCheckpoint): TRegistryResult;
 begin
   Result := Default(TRegistryResult);
   Result.State := ACheckpoint.State;
+  Result.StoredState := ACheckpoint.State;
   Result.TransactionHash := ACheckpoint.Hash;
   Result.DocumentHash := ACheckpoint.DocumentHash;
   Result.ContractAddress := ACheckpoint.ContractAddress;
@@ -88,6 +91,8 @@ begin
     except
       on Error: Exception do Result.State := 'unknown';
     end;
+  // A falha atual nao pode ser apresentada como sucesso historico.
+  Result.State := 'unknown';
   Result.ErrorText := AMessage;
 end;
 
@@ -164,7 +169,14 @@ begin
           Receipt := Registry.AwaitReceipt(Checkpoint.Hash, ARequest.TrackingMs, 100);
           try
             Result := Describe(Load(Path, ARequest.Action = raTrackRegistration));
-            // Nil conserva pending/unknown; nao e rejeicao nem novo pedido.
+            Result.ReceiptObserved := Assigned(Receipt);
+            if not Result.ReceiptObserved and
+              ((Result.StoredState = 'succeeded') or (Result.StoredState = 'reverted')) then
+            begin
+              Result.State := 'unknown';
+              Result.Diagnostic := 'Previously observed receipt is now absent; verify history before another send.';
+            end;
+            // O arquivo preserva a observacao historica; a tela mostra a consulta atual.
           finally Receipt.Free; end;
         end;
       raVerify:

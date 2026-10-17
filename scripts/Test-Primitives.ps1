@@ -1,5 +1,5 @@
 [CmdletBinding()]
-param([Parameter(Mandatory = $true)][string]$DelphiRoot, [switch]$Protocol, [switch]$Anvil, [switch]$BuildDemo, [switch]$BuildCli, [switch]$Didactic, [switch]$BuildDidacticNode, [switch]$BuildDidacticCli, [switch]$BuildDidacticScenario, [switch]$BuildSignaturesDemo, [switch]$BuildTransactionsDemo, [switch]$BuildEnvironmentDemo, [switch]$BuildRegistryDesktop, [switch]$BuildRegistryAcceptance)
+param([Parameter(Mandatory = $true)][string]$DelphiRoot, [switch]$Protocol, [switch]$Anvil, [switch]$BuildDemo, [switch]$BuildCli, [switch]$Didactic, [switch]$BuildDidacticNode, [switch]$BuildDidacticCli, [switch]$BuildDidacticScenario, [switch]$BuildSignaturesDemo, [switch]$BuildTransactionsDemo, [switch]$BuildEnvironmentDemo, [switch]$BuildRegistryDesktop, [switch]$BuildRegistryAcceptance, [switch]$Security, [switch]$BuildSecurityDemo, [switch]$BuildReceiptLossDemo)
 $ErrorActionPreference = 'Stop'
 $projectRoot = Split-Path $PSScriptRoot -Parent
 $compiler = Join-Path $DelphiRoot 'bin\dcc64.exe'
@@ -7,8 +7,8 @@ if (-not (Test-Path -LiteralPath $compiler)) { throw 'Compilador Win64 ausente.'
 $version = (Get-Item -LiteralPath $compiler).VersionInfo.FileVersion
 if ($version -notlike '37.*') { throw 'Exigido Delphi 13.' }
 & (Join-Path $PSScriptRoot 'Prepare-Dependencies.ps1')
-$buildProgram = $BuildRegistryDesktop -or $BuildRegistryAcceptance -or $BuildEnvironmentDemo -or $BuildTransactionsDemo -or $BuildSignaturesDemo -or $BuildDemo -or $BuildCli -or $BuildDidacticNode -or $BuildDidacticCli -or $BuildDidacticScenario
-$projectName = if ($BuildRegistryDesktop) { 'Chapter18.Desktop' } elseif ($BuildRegistryAcceptance) { 'Chapter18.Acceptance' } elseif ($BuildEnvironmentDemo) { 'Chapter14.Environment' } elseif ($BuildTransactionsDemo) { 'Chapter07.Transactions' } elseif ($BuildSignaturesDemo) { 'Chapter06.Signatures' } elseif ($BuildDidacticScenario) { 'Didactic.Scenario' } elseif ($BuildDidacticNode) { 'Didactic.Node' } elseif ($BuildDidacticCli) { 'Didactic.Cli' } elseif ($Didactic) { 'Didactic' } elseif ($BuildCli) { 'DocumentRegistry.Cli' } elseif ($BuildDemo) { 'DocumentRegistry.Demo' } elseif ($Anvil) { 'Anvil' } elseif ($Protocol) { 'Protocol' } else { 'Primitives' }
+$buildProgram = $BuildReceiptLossDemo -or $BuildSecurityDemo -or $BuildRegistryDesktop -or $BuildRegistryAcceptance -or $BuildEnvironmentDemo -or $BuildTransactionsDemo -or $BuildSignaturesDemo -or $BuildDemo -or $BuildCli -or $BuildDidacticNode -or $BuildDidacticCli -or $BuildDidacticScenario
+$projectName = if ($BuildReceiptLossDemo) { 'Chapter19.ReceiptLoss' } elseif ($BuildSecurityDemo) { 'Chapter19.Security' } elseif ($Security) { 'Security' } elseif ($BuildRegistryDesktop) { 'Chapter18.Desktop' } elseif ($BuildRegistryAcceptance) { 'Chapter18.Acceptance' } elseif ($BuildEnvironmentDemo) { 'Chapter14.Environment' } elseif ($BuildTransactionsDemo) { 'Chapter07.Transactions' } elseif ($BuildSignaturesDemo) { 'Chapter06.Signatures' } elseif ($BuildDidacticScenario) { 'Didactic.Scenario' } elseif ($BuildDidacticNode) { 'Didactic.Node' } elseif ($BuildDidacticCli) { 'Didactic.Cli' } elseif ($Didactic) { 'Didactic' } elseif ($BuildCli) { 'DocumentRegistry.Cli' } elseif ($BuildDemo) { 'DocumentRegistry.Demo' } elseif ($Anvil) { 'Anvil' } elseif ($Protocol) { 'Protocol' } else { 'Primitives' }
 $outputRoot = Join-Path $projectRoot "build\$projectName"
 $unitOutput = Join-Path $outputRoot 'dcu'
 New-Item -ItemType Directory -Path $unitOutput -Force | Out-Null

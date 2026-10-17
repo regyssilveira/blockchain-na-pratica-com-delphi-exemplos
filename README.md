@@ -138,3 +138,8 @@ A inspeção Delphi de rede, bloco e saldo está em [chapters/chapter14](chapter
 ## Aplicação do capítulo 18
 
 Aplicação VCL Delphi nativa com hash local, registro, verificação, acompanhamento persistido e trabalhador separado da interface. Veja o [roteiro local e os limites](chapters/chapter18/README.md). Execute `scripts/Test-Chapter18.ps1` para conferir o fluxo e a retomada; apenas nó Anvil e compilação Solidity são externos.
+
+
+## Segurança e confiabilidade do capítulo 19
+
+[Exercícios locais](chapters/chapter19/README.md): proteção de chave conhecida pelo Windows, exportação de acompanhamento com campos permitidos e perda controlada de recibo no Anvil. Use `scripts/Test-Chapter19.ps1`; não introduza chaves reais nem interprete rollback de laboratório como validação de finalidade pública.
