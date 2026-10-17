@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "state": "unknown",
+  "storedState": "succeeded",
+  "waitExitCode": 2,
+  "queryExitCode": 4,
+  "sameNonce": true,
+  "found": false
+}

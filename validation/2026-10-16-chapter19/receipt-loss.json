@@ -1,0 +1,55 @@
+{
+  "simulatedHistoryRollback": true,
+  "publicConsensusTested": false,
+  "checks": [
+    {
+      "name": "deployment_succeeded",
+      "passed": true
+    },
+    {
+      "name": "registration_succeeded_before_rollback",
+      "passed": true
+    },
+    {
+      "name": "document_found_before_rollback",
+      "passed": true
+    },
+    {
+      "name": "anvil_rollback_applied",
+      "passed": true
+    },
+    {
+      "name": "document_absent_after_rollback",
+      "passed": true
+    },
+    {
+      "name": "absent_receipt_not_presented_as_success",
+      "passed": true
+    },
+    {
+      "name": "current_response_contains_no_receipt",
+      "passed": true
+    },
+    {
+      "name": "stored_metadata_marked_as_historical",
+      "passed": true
+    },
+    {
+      "name": "historical_observation_preserved",
+      "passed": true
+    },
+    {
+      "name": "same_signed_operation_preserved",
+      "passed": true
+    },
+    {
+      "name": "tracking_did_not_resend",
+      "passed": true
+    }
+  ],
+  "nonceAfterRollback": "0x1",
+  "presentedStateAfterLoss": "unknown",
+  "originalHashPreserved": true,
+  "storedStateAfterLoss": "succeeded",
+  "passed": true
+}

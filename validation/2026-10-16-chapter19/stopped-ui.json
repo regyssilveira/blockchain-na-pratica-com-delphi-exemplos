@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "checks": [
+    "stopped_node_reports_client_error",
+    "stopped_node_not_confirmed",
+    "stopped_node_preserves_original_hash",
+    "stopped_node_no_lookup_success"
+  ]
+}

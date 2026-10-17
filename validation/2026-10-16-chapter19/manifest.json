@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "referenceTag": "chapter19-examples-2026-10-16",
+  "testedSourceCommit": "4ca9734ed253eb15747180d4e9feafca037a8a06",
+  "compiler": "37.0.57242.3601",
+  "target": "Win64",
+  "shell": "Windows PowerShell 5.1",
+  "cleanCheckout": true,
+  "cleanCheckoutHasSpaces": true,
+  "portRange": [
+    19645,
+    19646,
+    19647
+  ],
+  "offlineTests": 94,
+  "previousOfflineTests": 76,
+  "newTests": 18,
+  "integrationTests": 108,
+  "workflowChecks": 28,
+  "receiptLossChecks": 11,
+  "countsOverlap": true,
+  "dpapiCurrentUserOnlyTested": true,
+  "realSecretUsed": false,
+  "protectedBlobPublished": false,
+  "visualReviewPerformed": false,
+  "publicConsensusTested": false,
+  "sourceSHA256LF": {
+    "src/Blockchain.LocalKeyProtection.pas": "56df6c954496d9fdb3110ba36bff5a11ffbe9a5943ce2cb4ba0561e87e487c47",
+    "src/Blockchain.TrackingAudit.pas": "053f91c5e40096f77e26adc8a4592efcbf35ac56cf5ecac75df3d2c9807a279d",
+    "src/Blockchain.RegistryWorkflow.pas": "fc25ea05cb9f30ffa47c4ffc3f6e0abe0a42d25aad125c2b46e2a1cb5d6878a0",
+    "src/Blockchain.RegistryForm.pas": "c5e04256ad58a6f19bcb5089b4d25224839162e14e6088bfba3c62bedd44c3fa",
+    "demos/DocumentRegistry.Cli.dpr": "8e4e0a3aa76902782f80c340e8998477525f24f24f294d1c1715b1b6d03c9bd2",
+    "demos/Chapter19.Security.dpr": "369a130fd4e43ebbcc80c13a1a990e363e7f3030440ae13efc17bfe3fc1ae5ac",
+    "demos/Chapter19.ReceiptLoss.dpr": "608f33da84b8d0fc30bf19122ae5cb87e357abb07029752000709e12ad7be3ce",
+    "tests/Blockchain.Security.Tests.pas": "92483585cc44f86f539c5b891e7b86ab2db6edb8b9f714406a65fd09590f6836",
+    "tests/Security.Tests.dpr": "7ba48a57eeb9c094f6746395eadb8403a9a04a728fcc9f29d6955eead74ece18",
+    "scripts/Test-Primitives.ps1": "69a690f567842c39ae2507f22eb77b197f5273e27d7813bd195ec21a0fde03b1",
+    "scripts/Test-Chapter19.ps1": "bf8cc65818f2dfba89ce53075dc86f5486456a86e610a3d40a9a90647855b1e2",
+    "scripts/Test-ReceiptLoss.ps1": "a48bbf194b697ec1470d7614a26b4cd7268d5853ffd38bed61680cbfb7b655ab"
+  }
+}

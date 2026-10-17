@@ -1,0 +1,91 @@
+{
+  "passed": true,
+  "port": 19647,
+  "runDirectory": "D:\\Livros\\blockchain-na-pratica-com-delphi-exemplos\\build\\repro chapter19 aaa0076dd4e54fe7a70fca06885f3356\\build\\Anvil\\prototype-runs\\75856952d3b8485aba47c8066dff2004",
+  "registrationCheckpoint": "D:\\Livros\\blockchain-na-pratica-com-delphi-exemplos\\build\\repro chapter19 aaa0076dd4e54fe7a70fca06885f3356\\build\\Anvil\\prototype-runs\\75856952d3b8485aba47c8066dff2004\\registration.json",
+  "hash": "0x6d7b83e5fc73149a949a5842eb3ec197307f8b5ea218add887324dffa921be6a",
+  "state": "succeeded",
+  "blockNumber": "5",
+  "resumedNonce": "0x5",
+  "queryNonce": "0x5",
+  "operations": [
+    {
+      "name": "01-deploy",
+      "processId": 36576,
+      "exitCode": 0,
+      "elapsedMs": 823
+    },
+    {
+      "name": "02-deployment-pending",
+      "processId": 40376,
+      "exitCode": 2,
+      "elapsedMs": 190
+    },
+    {
+      "name": "03-mine-deployment",
+      "processId": 50588,
+      "exitCode": 0,
+      "elapsedMs": 106
+    },
+    {
+      "name": "04-confirm-deployment",
+      "processId": 51476,
+      "exitCode": 0,
+      "elapsedMs": 83
+    },
+    {
+      "name": "05-register",
+      "processId": 21920,
+      "exitCode": 0,
+      "elapsedMs": 137
+    },
+    {
+      "name": "06-registration-pending",
+      "processId": 29328,
+      "exitCode": 2,
+      "elapsedMs": 1086
+    },
+    {
+      "name": "07-query-before-mining",
+      "processId": 27448,
+      "exitCode": 4,
+      "elapsedMs": 113
+    },
+    {
+      "name": "08-mine-registration",
+      "processId": 23232,
+      "exitCode": 0,
+      "elapsedMs": 118
+    },
+    {
+      "name": "09-resume-original-hash",
+      "processId": 25084,
+      "exitCode": 0,
+      "elapsedMs": 103
+    },
+    {
+      "name": "10-query-restarted-client",
+      "processId": 44280,
+      "exitCode": 0,
+      "elapsedMs": 116
+    },
+    {
+      "name": "11-query-another-process",
+      "processId": 43460,
+      "exitCode": 0,
+      "elapsedMs": 116
+    },
+    {
+      "name": "12-verify-copy",
+      "processId": 24200,
+      "exitCode": 0,
+      "elapsedMs": 105
+    },
+    {
+      "name": "13-verify-changed",
+      "processId": 38784,
+      "exitCode": 4,
+      "elapsedMs": 104
+    }
+  ]
+}
