@@ -1,0 +1,12 @@
+﻿{
+    "passed":  true,
+    "compiler":  "37.0.57242.3601",
+    "target":  "Win64",
+    "exitCode":  0,
+    "output":  [
+                   "ambiente_delphi=pronto",
+                   "bits_do_ponteiro=64"
+               ],
+    "thirdPartyDependenciesRequired":  false,
+    "externalNodeRequired":  false
+}

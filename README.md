@@ -152,3 +152,8 @@ A [ficha local de avaliação](chapters/chapter20/README.md) ajuda a registrar p
 ## Primeiro programa do capítulo 4
 
 O [console inicial](chapters/chapter04/README.md) compila e executa com a biblioteca padrão Delphi, sem dependências de terceiros ou nó. Referência `chapter04-examples-r1-2026-10-16`; roteiro `scripts/Test-Chapter04.ps1`.
+
+
+## Reprodução independente dos fundamentos
+
+Os roteiros dos capítulos 4–7 foram conferidos em clone novo, com caminho contendo espaços e dependências obtidas nesse clone. Consulte [tags, comandos, resultados e limites](validation/2026-10-16-reader-foundations/RESULTADOS.md). Os totais das suítes se sobrepõem; essa conferência não substitui a execução dos percursos de rede e integração.

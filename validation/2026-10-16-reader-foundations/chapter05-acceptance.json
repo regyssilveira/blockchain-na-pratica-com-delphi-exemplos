@@ -1,0 +1,37 @@
+{
+  "chapter": "05",
+  "tag": "didactic-chain-accepted-2026-10-16",
+  "commit": "6b411073e28266413144fdf9e55c16f1bf76f82a",
+  "unitTests": 44,
+  "failures": 0,
+  "errors": 0,
+  "ignored": 0,
+  "hashCases": [
+    {
+      "file": "document-a.txt",
+      "exitCode": 0,
+      "sha256": "adf835a3a021fc814fbb13f2cb4e544a18dabd8e608a0013f6eb450318713bf2",
+      "independentComparison": true
+    },
+    {
+      "file": "document-a-copy.txt",
+      "exitCode": 0,
+      "sha256": "adf835a3a021fc814fbb13f2cb4e544a18dabd8e608a0013f6eb450318713bf2",
+      "independentComparison": true
+    },
+    {
+      "file": "document-b.txt",
+      "exitCode": 0,
+      "sha256": "cbe8133060aa861dcc9143df350ada855912aa27d62db435a5ecc5011a33ccab",
+      "independentComparison": true
+    },
+    {
+      "file": "empty.bin",
+      "exitCode": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "independentComparison": true
+    }
+  ],
+  "missingFileExitCode": 1,
+  "trackedWorktreeClean": true
+}
