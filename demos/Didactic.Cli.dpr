@@ -30,9 +30,9 @@ end;
 
 procedure Run;
 var Command: string; Document, Input: TJSONObject;
-  Transaction: TDocumentTransaction; Block, Changed, Previous: TDidacticBlock;
+  Transaction: TDocumentTransaction; Block, Changed, Previous, OriginalPrevious: TDidacticBlock;
   Chain: TDidacticChain; Policy: TDidacticPolicy; Mining: TMiningResult;
-  Items: TJSONArray; Difficulty: Integer; Rejected: Boolean;
+  Items: TJSONArray; Difficulty: Integer; Rejected: Boolean; LinkDiagnostic, TimeDiagnostic: string;
 begin
   if ParamCount = 0 then raise EDidacticValidation.Create('Commands: make send status mine document transaction sync network stop validate wait-tip wait-tx block-demo link-demo pow-demo');
   Command := ParamStr(1);
@@ -115,11 +115,40 @@ begin
       end
       else
       begin
-        Previous.Timestamp := 10;
+        // B1 e B2 sao candidatos comuns; a genese permanece intacta.
+        OriginalPrevious := Block;
+        Previous := OriginalPrevious;
+        Block.Height := 2;
+        Block.Timestamp := 20;
+        Block.PreviousHash := Previous.Hash;
+        Block.Hash := Block.CalculateHash(Policy);
+        Block.ValidateLink(Policy, Previous); // controle positivo
+        Previous.Timestamp := 2; // ainda menor que 20
         Previous.Hash := Previous.CalculateHash(Policy);
         Rejected := False;
-        try Block.ValidateLink(Policy, Previous); except on Error: EDidacticValidation do Rejected := True; end;
+        LinkDiagnostic := '';
+        try Block.ValidateLink(Policy, Previous); except
+          on Error: EDidacticValidation do
+          begin Rejected := True; LinkDiagnostic := Error.Message; end;
+        end;
+        if not Rejected or (LinkDiagnostic <> 'Broken block link.') then
+          raise EDidacticValidation.Create('Expected isolated link rejection.');
         Document.AddPair('recomputedOldBlockRejectedByNextLink', TJSONBool.Create(Rejected));
+        Document.AddPair('linkDiagnostic', LinkDiagnostic);
+        Document.AddPair('timeStillIncreasing', TJSONBool.Create(Block.Timestamp > Previous.Timestamp));
+        Previous := OriginalPrevious;
+        Changed := Block;
+        Changed.Timestamp := Previous.Timestamp; // referencia correta, instante repetido
+        Changed.Hash := Changed.CalculateHash(Policy);
+        TimeDiagnostic := '';
+        try Changed.ValidateLink(Policy, Previous); except
+          on Error: EDidacticValidation do TimeDiagnostic := Error.Message;
+        end;
+        if TimeDiagnostic <> 'Block timestamp must increase.' then
+          raise EDidacticValidation.Create('Expected isolated timestamp rejection.');
+        Document.AddPair('timeDiagnostic', TimeDiagnostic);
+        Document.AddPair('referenceStillMatching', TJSONBool.Create(Changed.PreviousHash = Previous.Hash));
+        Document.AddPair('ownHashStillMatching', TJSONBool.Create(Changed.Hash = Changed.CalculateHash(Policy)));
       end;
       Document.AddPair('scope', 'Draft block hash/link demonstration; full ledger also validates signatures, state and proof of work.');
     end

@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "compiler": "37.0.57242.3601",
+  "target": "Win64",
+  "environment": {
+    "chainId": "31337"
+  },
+  "expectedProcessErrors": 2,
+  "readOnlyQueries": true,
+  "ownNodeStopped": true
+}

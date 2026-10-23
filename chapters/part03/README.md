@@ -7,7 +7,7 @@ Este percurso constrói uma blockchain didática própria: blocos, transações 
 Na raiz do repositório público, execute:
 
 ```powershell
-git checkout didactic-chain-accepted-2026-10-16
+git checkout reading-revision-2026-10-23
 .\scripts\Test-Didactic.ps1 -DelphiRoot 'C:\Program Files (x86)\Embarcadero\Studio\37.0'
 ```
 
@@ -22,7 +22,7 @@ Execute os comandos a partir da raiz, depois da compilação acima. A interface 
 | Capítulo | Comando ou cenário | Resultado a observar |
 |---|---|---|
 | 8 | `build/Didactic.Cli/Didactic.Cli.exe block-demo fixtures/p02/document-a.txt` | Bytes canônicos e hashes diferentes após alteração |
-| 9 | `build/Didactic.Cli/Didactic.Cli.exe link-demo fixtures/p02/document-a.txt` | Recalcular o bloco antigo não corrige a referência do seguinte |
+| 9 | `build/Didactic.Cli/Didactic.Cli.exe link-demo fixtures/p02/document-a.txt` | Duas causas isoladas: referência antiga e instante não crescente |
 | 10 | `make`, `send`, `mine`, `document`, `stop`, reinício e `validate` abaixo | Pendente é diferente de incluída; dados persistem e são revalidados |
 | 11 | `build/Didactic.Cli/Didactic.Cli.exe pow-demo` e N09–N10 | Dificuldades 2/3/4, empate e adoção de mais trabalho válido |
 | 12 | N01–N04 e N12 do cenário automático | Propagação entre processos reais, inclusive A → B → C sem ligação A–C |
@@ -73,3 +73,5 @@ O envio entra no conjunto pendente; a consulta só encontra o registro após inc
 ## Limites
 
 O transporte é HTTP/JSON restrito a loopback, sem autenticação, TLS ou defesa contra participantes hostis. A dificuldade é pequena e fixa por rede. O empate preserva a história atual; mais trabalho só vence após validação integral. Não há finalidade de rede pública, proteção de custódia ou comprovação de identidade/autoria. O checksum do arquivo detecta alterações acidentais, não autentica o produtor. Consulte o [formato e regras](PROTOCOL.md), a [procedência dos vetores](../../fixtures/didactic/PROVENIENCIA.md) e os [resultados executados](../../validation/2026-10-16-didactic/RESULTADOS.md).
+
+A revisão de leitura abre o record e os bytes do bloco e o laço de mineração no livro. O roteiro `scripts/Test-ReadingRevision.ps1` verifica os resultados de `block-demo`, `link-demo` e `pow-demo`; veja também [o rastreamento de bytes](../chapter17/README.md). As tags anteriores permanecem disponíveis para reproduzir a redação anterior.

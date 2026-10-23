@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "output": "D:\\Livros\\blockchain-na-pratica-com-delphi-exemplos\\build\\Chapter19\\4c8308e410ff4bfda29532e836358ffd",
+  "compiler": "37.0.57242.3601",
+  "target": "Win64",
+  "executed": 94,
+  "failures": 0,
+  "errors": 0,
+  "ignored": 0,
+  "previousTests": 76,
+  "newTests": 18,
+  "positiveProcesses": 3,
+  "expectedProcessErrors": 4,
+  "networkUsed": false,
+  "dpapiCurrentUser": true,
+  "differentUserTested": false,
+  "protectedBlobPublished": false,
+  "realSecretUsed": false,
+  "knownFixtureKeyOnly": true,
+  "minimalAuditFields": [
+    "chainId",
+    "schema",
+    "state",
+    "transactionHash"
+  ]
+}

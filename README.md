@@ -157,3 +157,9 @@ O [console inicial](chapters/chapter04/README.md) compila e executa com a biblio
 ## Reprodução independente dos fundamentos
 
 Os roteiros dos capítulos 4–7 foram conferidos em clone novo, com caminho contendo espaços e dependências obtidas nesse clone. Consulte [tags, comandos, resultados e limites](validation/2026-10-16-reader-foundations/RESULTADOS.md). Os totais das suítes se sobrepõem; essa conferência não substitui a execução dos percursos de rede e integração.
+
+## Revisão de leitura — 23/10/2026
+
+A tag `reading-revision-2026-10-23` acompanha o aprofundamento do livro. Acrescenta [cliente mínimo completo](chapters/chapter15/README.md), [rastreamento dos bytes](chapters/chapter17/README.md) e duas experiências isoladas em `link-demo`. Preserve sua cópia existente ao selecionar versões; não clone novamente dentro dela. Os requisitos e as licenças permanecem os mesmos.
+
+Na raiz, use `scripts/Test-ReadingRevision.ps1 -DelphiRoot 'C:\Program Files (x86)\Embarcadero\Studio\37.0'` para os experimentos offline e `scripts/Test-Chapter15.ps1` com a mesma raiz para a consulta em Anvil próprio. Os roteiros completos `Test-Didactic.ps1` e `Test-Chapter19.ps1` conferem rede, contrato, aplicação e falhas. As evidências desta revisão estão em `validation/2026-10-23-reading`.
