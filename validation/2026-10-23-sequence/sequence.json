@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "isolatedCheckoutWithSpaces": "D:\\Livros\\blockchain-na-pratica-com-delphi\\tmp\\sequencia capitulos 15 e 17",
+  "checks": [
+    {
+      "chapter": 15,
+      "missingOnPreviousTag": true,
+      "presentAfterCheckout": true,
+      "checkoutBeforeFirstRun": true,
+      "executedScriptMatchesTag": true
+    },
+    {
+      "chapter": 17,
+      "missingOnPreviousTag": true,
+      "presentAfterCheckout": true,
+      "checkoutBeforeFirstRun": true,
+      "executedScriptMatchesTag": true
+    }
+  ]
+}

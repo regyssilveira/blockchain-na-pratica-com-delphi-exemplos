@@ -2,7 +2,16 @@
 
 Referência: tag `reading-revision-2026-10-23`. Código original Apache License 2.0; dependências mantêm seus avisos. Windows x64, Delphi 13 Win64 instalado e licenciado, Windows PowerShell 5.1 e Git. O preparo inicial usa internet; o rastreamento funciona offline depois das dependências.
 
-Na cópia já obtida dos exemplos, preserve alterações e selecione a revisão. Se começou diretamente aqui, clone o repositório público uma vez e entre na pasta criada antes dos comandos:
+Se já executou o capítulo anterior, continue na mesma cópia e preserve alterações próprias. A revisão `chapter14-examples-2026-10-16`, usada nos capítulos 14 e 16, ainda não contém este novo exercício: selecione a revisão abaixo antes de tentar executá-lo.
+
+Somente se ainda não possui a cópia, obtenha-a e entre na pasta:
+
+```powershell
+git clone https://github.com/regyssilveira/blockchain-na-pratica-com-delphi-exemplos.git
+cd blockchain-na-pratica-com-delphi-exemplos
+```
+
+Na raiz da cópia existente ou recém-obtida:
 
 ```powershell
 git fetch origin --tags
@@ -22,3 +31,5 @@ O destino terminado em `0001` é ilustrativo. Nenhuma transação é enviada, n�
 O capítulo 8 mostra o record e `CanonicalBytes` de `src/Didactic.Block.pas`. Os campos do cabeçalho começam nas posições 0 (formato), 20 (rede), 45 (altura), 53 (hash anterior), 85 (instante), 93 (dificuldade), 94 (nonce) e 102 (quantidade). Esses offsets valem para os textos da política padrão.
 
 `link-demo` prepara B1 e B2 sem alterar a gênese e exige um controle positivo. Primeiro muda o instante de B1 de 1 para 2, conservando B2 em 20: exige `Broken block link.` com tempo crescente. Depois restaura B1, iguala o instante de B2 e recalcula o hash próprio: exige `Block timestamp must increase.` com referência e hash coerentes. Os candidatos demonstram validação parcial, sem alegar aprovação integral da cadeia.
+
+Conferência da sequência em `validation/2026-10-23-sequence/RESULTADOS.md`. Execute os roteiros um de cada vez: o preparo compartilha a pasta de ferramentas em `build/tools`.
