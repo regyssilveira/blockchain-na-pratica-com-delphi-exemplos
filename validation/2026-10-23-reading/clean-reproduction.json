@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "sourceCommit": "b4b02de",
+  "workingDirectory": "D:\\Livros\\blockchain-na-pratica-com-delphi-exemplos\\build\\reproducao leitura 2026-10-23",
+  "shell": "Windows PowerShell 5.1",
+  "chapter04Then05SameCheckout": true,
+  "primitiveTests": 44,
+  "readingTests": 114,
+  "hashOriginalAndCopyMatch": true,
+  "alteredHashDiffers": true,
+  "missingFileExit": 1,
+  "rpcPort": 20055,
+  "newGitDependenciesFetched": true,
+  "anvilArchiveReusedFromVerifiedCache": true,
+  "anvilArchiveSha256": "21f86b563d87404a68481f513bf3e419780ee536307b89c658215ae6f8f5aa45",
+  "initialRpcPreparationInterrupted": true,
+  "rpcRetryPassed": true,
+  "normalizedSourcesMatch": true
+}
